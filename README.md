@@ -91,8 +91,8 @@ TBD
 
 ### Asset Names
 
-Format: ALLCAPS_PascalCase
-Pattern: TYPE_AssetName
+* Format: ALLCAPS_PascalCase
+* Pattern: TYPE_AssetName
 
 ### Variable Names
 
