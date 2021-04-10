@@ -1,31 +1,41 @@
-# GAME DESIGN DOCUMENT
+# Table of Contents
 
-## Title
+* [General Information](#GeneralInformation)
+* [Game Jam Details](#GameJamDetails)
+* [Tools](#Tools)
+* [Concept](#Concept)
+* [Gameplay](#Gameplay)
+* [Naming Convention](#NamingConvention)
+* [Audio Format](#AudioFormat)
+
+## <a name="GeneralInformation">General Information</a>
+
+### Title
 Binora
 
-## Author
+### Author
 Matheus Vilano
 
-## Team
+### Team
 
-### [Matheus Vilano](https://www.matheusvilano.com/) 
+#### [Matheus Vilano](https://www.matheusvilano.com/) 
 - Game Designer
 - Programmer
 - Audio Artist
 
-### [Arisa Lutic-Hotta](https://www.arisalutichotta.com/)
+#### [Arisa Lutic-Hotta](https://www.arisalutichotta.com/)
 - Audio Artist
 - Level Designer
 
-### [Connor Staton](https://www.cjs-audio.com)
+#### [Connor Staton](https://www.cjs-audio.com)
 - Audio Artist
 - Level Designer
 
-### Ericka Florencia
+#### Ericka Florencia
 - Audio Artist
 - Level Designer
 
-## Jam
+## <a name="GameJamDetails">Game Jam Details</a>
 
 ### Name
 [“No Video Game 2”](https://itch.io/jam/no-video-jam-2)
@@ -34,14 +44,14 @@ Matheus Vilano
 * Sound is the focus.
 * Visuals should not be necessary for gameplay.
 
-## Tools
+## <a name="Tools">Tools</a>
 * Unreal Engine 4
 * FMOD Studio 2
 
-## Concept
+## <a name="Concept">Concept</a>
 The player will listen to a fully-designed ambience for N time. After that, the sounds will fade away, and the player needs to rebuild the soundscape.
 
-## Gameplay
+## <a name="Gameplay">Gameplay</a>
 
 ### Mechanics
 
@@ -77,7 +87,7 @@ Three trigger spheres
 
 TBD
 
-## Naming Convention
+## <a name="NamingConvention">Naming Convention</a>
 
 ### Asset Names
 
@@ -93,6 +103,7 @@ Pattern: TYPE_AssetName
 | Functions   | FunctionName |
 | Properties  | VariableName |
 | Structs     | UStructName  |
+| Tags        | MarkupTag    |
 | Other       | OtherName    |
 
 ### Types & Identifiers
@@ -116,7 +127,7 @@ Pattern: TYPE_AssetName
 * PC = Player Controller
 * PS = Player State
 
-## Audio Format
+## <a name="AudioFormat">Audio Format</a>
 
 | Category       | Amount of Channels | Behaviour | Length (Range in Minutes) | Maximum Amount Per Level |
 |:-------------- |:------------------ |:--------- |:-------------------------:|:------------------------ |
