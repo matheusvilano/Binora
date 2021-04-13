@@ -27,6 +27,8 @@
 		#pragma region Sound
 		{
 			this->FMODAudioComp = this->UObject::CreateDefaultSubobject<UFMODAudioComponent>(TEXT("Sound"));
+			this->FMODAudioComp->USceneComponent::SetupAttachment(this->AActor::GetRootComponent());
+			this->FMODAudioComp->USceneComponent::SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 		}
 		#pragma endregion
 	}
