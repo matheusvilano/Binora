@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{d6a45cef-5adf-4472-951a-f9c937c5b5d6}">
 		<property name="name">
-			<value>SP_NumberThree</value>
+			<value>SP_Helicopter</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -90,7 +90,11 @@
 			<destination>{f256cd17-c511-44ff-9857-66e1f9e4ddfe}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{8e7a616e-a06f-4a02-b28e-47933c4a7f33}" />
+	<object class="MultiSound" id="{8e7a616e-a06f-4a02-b28e-47933c4a7f33}">
+		<relationship name="sounds">
+			<destination>{9ecd29f0-ad9d-4832-837f-bd469c313bbf}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{0936d09b-5653-443e-8d9f-db9e4a228e71}">
 		<relationship name="effects">
 			<destination>{70b19629-7cd8-4392-8046-b3eab00c72b7}</destination>
@@ -118,6 +122,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{81322b4a-5aae-42f9-a142-0613cf30e2bb}" />
+	<object class="SingleSound" id="{9ecd29f0-ad9d-4832-837f-bd469c313bbf}">
+		<relationship name="audioFile">
+			<destination>{aff23b6b-524e-406d-a9f6-35c135585835}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{70b19629-7cd8-4392-8046-b3eab00c72b7}" />
 	<object class="MixerBusEffectChain" id="{360fa22c-453c-4518-9c91-67aaba2b8683}">
 		<relationship name="effects">

@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{adefb964-d065-4e2e-b477-607cc46b0469}">
 		<property name="name">
-			<value>BG_NumberTwo</value>
+			<value>BG_WaveyBois</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{552f0963-f24e-40aa-b9e0-5cb7696261b6}</destination>
@@ -90,7 +90,11 @@
 			<destination>{7cff45a2-3c50-40c6-95da-ba14ac9a7e13}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{acbafab7-c4c3-4878-8405-68e5106c423c}" />
+	<object class="MultiSound" id="{acbafab7-c4c3-4878-8405-68e5106c423c}">
+		<relationship name="sounds">
+			<destination>{c131c4b6-73e8-422a-9337-810a6bbf4ee5}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{22c506f3-135e-434c-8ef4-fb11be0e3832}">
 		<relationship name="effects">
 			<destination>{4348baf0-dc54-4c38-9607-8c0a19f165ac}</destination>
@@ -117,6 +121,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d78107dd-598a-4b91-b56c-e0e6dabafe3f}" />
+	<object class="SingleSound" id="{c131c4b6-73e8-422a-9337-810a6bbf4ee5}">
+		<property name="looping">
+			<value>true</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{3ecb5c27-1c2e-4bc4-8e83-ea8a8d70bef1}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{4348baf0-dc54-4c38-9607-8c0a19f165ac}" />
 	<object class="MixerBusEffectChain" id="{91434431-07d6-402d-8e93-cb55242cc659}">
 		<relationship name="effects">

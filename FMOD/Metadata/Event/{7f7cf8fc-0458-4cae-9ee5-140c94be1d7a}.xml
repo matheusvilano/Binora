@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{7f7cf8fc-0458-4cae-9ee5-140c94be1d7a}">
 		<property name="name">
-			<value>SP_NumberTwo</value>
+			<value>SP_BoatHorn</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -90,7 +90,11 @@
 			<destination>{9789ffd0-9b61-4e00-b8cb-667c39f312d6}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{fbcf1da2-a2c4-45d2-9aed-8a5e63654d57}" />
+	<object class="MultiSound" id="{fbcf1da2-a2c4-45d2-9aed-8a5e63654d57}">
+		<relationship name="sounds">
+			<destination>{98e21105-f6e2-494d-88b4-33633878f795}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{a91a5283-95ef-49aa-be5b-453ac4a8fc4e}">
 		<relationship name="effects">
 			<destination>{0c367aca-bc9c-4546-9cd9-b16f54fa28cf}</destination>
@@ -118,6 +122,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{90bc7a8a-fc3e-4d93-b224-3f4ae9c9dfb2}" />
+	<object class="SingleSound" id="{98e21105-f6e2-494d-88b4-33633878f795}">
+		<relationship name="audioFile">
+			<destination>{39d5c6ca-b449-4323-8bb5-4f8bda50aea2}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{0c367aca-bc9c-4546-9cd9-b16f54fa28cf}" />
 	<object class="MixerBusEffectChain" id="{1bd3d2c2-d1c5-4c5b-aeb1-1b0797ebb155}">
 		<relationship name="effects">
