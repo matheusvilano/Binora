@@ -3,17 +3,26 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/SphereComponent.h"
+#include "SoundPawnType.h"
+
 #include "FMODAudioComponent.h"
-#include "GameFramework/Pawn.h"
+#include "FMODEvent.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/DefaultPawn.h"
+#include "GameFramework/FloatingPawnMovement.h"
+#include "Materials/MaterialInterface.h"
+#include "UObject/UObjectGlobals.h"
+
 #include "SoundPawn.generated.h"
 
 // Forward declaration
 class UFMODAudioComponent;
+class UFMODEvent;
 class USphereComponent;
+class UMaterialInterface;
 
-UCLASS()
-class BINORA_API ASoundPawn : public APawn
+UCLASS(DontCollapseCategories=("Sound Pawn"), HideCategories=("Materials", "FMODAudio", "Cooking", "Rendering", "Camera", "Replication", "Input", "Actor", "HLOD"))
+class BINORA_API ASoundPawn : public ADefaultPawn
 {
 	GENERATED_BODY()
 
@@ -21,41 +30,54 @@ class BINORA_API ASoundPawn : public APawn
 
 	public:
 
-		// Sets default values for this pawn's properties
+		// Sets default values for this pawn's properties.
 		ASoundPawn();
 
-#pragma endregion
-
-#pragma region Gameplay
-
-	protected:
-
-		// The sphere collider to be used when counting the score.
-		UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, DisplayName="Sphere")
-		USphereComponent* SphereComp = nullptr;
+		// Construction script
+		virtual void OnConstruction(const FTransform& Transform) override;
 
 #pragma endregion
 
 #pragma region Sound
 
+	private:
+		
+		// The FMOD component in charge of managing sound for this Pawn.
+		UPROPERTY(BlueprintReadOnly, DisplayName="FMOD Audio Component", Meta=(AllowPrivateAccess=true))
+		UFMODAudioComponent* FMODAudioComponent = nullptr;
+
 	protected:
 
-		// The FMOD component in charge of managing sound for this Pawn.
-		UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, DisplayName="Sound")
-		UFMODAudioComponent* FMODAudioComp = nullptr;
+		// What type of SoundPawn this is.
+		UPROPERTY(BlueprintReadOnly, Category="Sound Pawn", EditInstanceOnly, DisplayName="Sound Pawn Type")
+		ESoundPawnType SoundPawnType = ESoundPawnType::SPT_Unspecified;
+
+		// The FMOD Event to play on this Pawn.
+		UPROPERTY(BlueprintReadOnly, Category="Sound Pawn", EditInstanceOnly, DisplayName="FMOD Event")
+		UFMODEvent* FMODEvent = nullptr;
 
 #pragma endregion
 
-#pragma region Framework
+#pragma region Input
 
 	public:	
 
-		// Called every frame
-		virtual void Tick(float DeltaTime) override;
-
-		// Called to bind functionality to input
+		// Called to bind functionality to input.
 		virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 #pragma endregion
 
+#pragma region Other
+
+	protected:
+
+		// The optional reference-Mesh material. It is recommended you use simple colours for reference only, as the Mesh will be invisible in-game.
+		UPROPERTY(BlueprintReadOnly, EditInstanceOnly, Category="Sound Pawn", DisplayName="Mesh Colour")
+		UMaterialInterface* MeshColour = nullptr;
+
+		// The radius of the Sphere. It indirectly affects gameplay difficulty: the smaller the radius, the harder the game. Avoid changing.
+		UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Sound Pawn", DisplayName="Sphere Radius", Meta=(ClampMin=0.0f, ClampMax=1000.0f))
+		float SphereRadius = 35.0f;
+
+#pragma endregion
 };
