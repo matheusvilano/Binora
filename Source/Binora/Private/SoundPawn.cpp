@@ -52,6 +52,9 @@
 
 		// Set the Sphere Radius. Note: values are clamped. Min=0, Max=1000.
 		this->ADefaultPawn::GetCollisionComponent()->InitSphereRadius(this->SphereRadius);
+
+		// Force this Pawn to be at 0.0f, 0.0f, 0.0f
+		this->AActor::SetActorLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
 
 #pragma endregion
