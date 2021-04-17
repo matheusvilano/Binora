@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "EScoreCategory.h"
+#include "ScoreCategory.h"
 #include "BinoraGameModeBase.generated.h"
 
 /**
