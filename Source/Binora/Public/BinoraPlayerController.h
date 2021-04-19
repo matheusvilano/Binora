@@ -26,7 +26,12 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-	#pragma region Inherited
+	#pragma region Initialization
+
+		public:
+
+			// Constructor to set defaults
+			ABinoraPlayerController();
 
 		protected:
 			
@@ -49,7 +54,11 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 
 			// The Specific SoundPawns.
 			UPROPERTY(BlueprintReadOnly, DisplayName="Specifics")
-			TArray<ASoundPawn*> Specifics;
+			TArray<ASoundPawn*> Specs;
+
+			// Spawns a SoundPawn and sets its SoundActorType and FMODEvent.
+			UFUNCTION()
+			void SpawnSoundPawn(TArray<ASoundPawn*>& SoundPawnArray, ESoundActorType SoundType, UFMODEvent* FMODEvent);
 
 	#pragma endregion
 };

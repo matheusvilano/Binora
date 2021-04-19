@@ -52,6 +52,13 @@
 	// Construction script
 	void ASoundActor::OnConstruction(const FTransform& Transform)
 	{
+		// Force Z axis to 0 and NO rotation
+		{
+			FVector Location = this->AActor::GetActorLocation();
+			this->AActor::SetActorLocation(FVector(Location.X, Location.Y, 0.0f));
+			this->AActor::SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));
+		}
+
 		// Set the FMOD Event. Note: there is no null check here; make sure you assign the reference in the Details panel.
 		this->FMODAudioComponent->SetEvent(this->FMODEvent);
 

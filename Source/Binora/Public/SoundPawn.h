@@ -47,13 +47,31 @@ class BINORA_API ASoundPawn : public ADefaultPawn
 
 		protected:
 
-			// What type of SoundPawn this is.
-			UPROPERTY(BlueprintReadOnly, Category="Sound Pawn", EditInstanceOnly, DisplayName="Sound Type", Meta=(ExposeOnSpawn=true))
-			ESoundActorType SoundType = ESoundActorType::ST_Unspecified;
-
 			// The FMOD Event to play on this Pawn.
 			UPROPERTY(BlueprintReadOnly, Category="Sound Pawn", EditInstanceOnly, DisplayName="FMOD Event", Meta=(ExposeOnSpawn=true))
 			UFMODEvent* FMODEvent = nullptr;
+
+			// What type of SoundPawn this is.
+			UPROPERTY(BlueprintReadOnly, Category="Sound Pawn", BlueprintGetter=GetSoundType, EditInstanceOnly, DisplayName="Sound Type", Meta=(ExposeOnSpawn=true))
+			ESoundActorType SoundType = ESoundActorType::ST_Unspecified;
+
+		public:
+
+			// Get the FMOD Event.
+			UFUNCTION()
+			UFMODEvent* GetFMODEvent() { return this->FMODEvent; };
+
+			// Set the FMOD Event.
+			UFUNCTION()
+			UFMODEvent* SetFMODEvent(UFMODEvent* Event) { this->FMODEvent = Event; return this->FMODEvent; };
+
+			// Get the SoundType.
+			UFUNCTION(BlueprintPure)
+			ESoundActorType GetSoundType() const { return this->SoundType; };
+
+			// Set the SoundType.
+			UFUNCTION()
+			ESoundActorType SetSoundType(ESoundActorType SoundActorType) { this->SoundType = SoundActorType; return this->SoundType; };
 
 	#pragma endregion
 
