@@ -1,16 +1,16 @@
 // This work by Matheus Vilano is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/
 
-#include "BinoraGameModeBase.h"
+#include "BinoraGameMode.h"
 
 #pragma region Constructors
 
-    ABinoraGameModeBase::ABinoraGameModeBase(){}
+    ABinoraGameMode::ABinoraGameMode(){}
 
 #pragma endregion
 
 #pragma region Framework
 
-    void ABinoraGameModeBase::BeginPlay()
+    void ABinoraGameMode::BeginPlay()
     {
         // GET ALL ACTORS OF TYPE <>
         // COUNT THEM
@@ -22,17 +22,17 @@
 
 #pragma region Score
 
-    inline void ABinoraGameModeBase::AddScore(uint8 Addend)
+    inline void ABinoraGameMode::AddScore(uint8 Addend)
     {
         this->Score = ((this->Score + Addend) > 100) ? 100 : this->Score + Addend;
     }
 
-    float ABinoraGameModeBase::GetScoreAsPercentage() const
+    float ABinoraGameMode::GetScoreAsPercentage() const
     {
         return 100 * this->Score / this->MaxScore;
     }
 
-    EScoreCategory ABinoraGameModeBase::GetScoreAsCategory() const
+    EScoreCategory ABinoraGameMode::GetScoreAsCategory() const
     {
         // This will be used to get the score as a category
         uint8 ScoreAsPercentage = this->GetScoreAsPercentage();
