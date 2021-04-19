@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 
+#include "BinoraInputComponent.h"
 #include "Containers/Array.h"
 #include "SoundActor.h"
 #include "SoundPawn.h"
@@ -13,13 +14,14 @@
 
 #pragma region Declaration
 
+	class UBinoraInputComponent;
 	class ASoundActor;
 	class ASoundPawn;
 
 #pragma endregion
 
 /**
- * 
+ * Binora's default Player Controller.
  */
 UCLASS()
 class BINORA_API ABinoraPlayerController : public APlayerController
@@ -37,6 +39,9 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 			
 			// Called when the game starts or when spawned
 			virtual void BeginPlay() override;
+
+			// Setup the BinoraInputComponent.
+			virtual void SetupInputComponent() override;
 
 	#pragma endregion
 
@@ -59,6 +64,16 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 			// Spawns a SoundPawn and sets its SoundActorType and FMODEvent.
 			UFUNCTION()
 			void SpawnSoundPawn(TArray<ASoundPawn*>& SoundPawnArray, ESoundActorType SoundType, UFMODEvent* FMODEvent);
+
+	#pragma endregion
+
+	#pragma region Bindings
+
+		protected:
+
+			// Binora's custom input component (supports Lambdas).
+			UPROPERTY()
+			UBinoraInputComponent* BinoraInputComponent = nullptr;
 
 	#pragma endregion
 };

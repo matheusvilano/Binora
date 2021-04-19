@@ -2,6 +2,8 @@
 
 #include "BinoraPlayerController.h"
 
+#include "Delegates/DelegateInstancesImpl.h"
+#include "Engine/InputDelegateBinding.h"
 #include "Kismet/GameplayStatics.h"
 
 #pragma region Inherited
@@ -40,57 +42,112 @@
 
         #pragma endregion
 
-        // Get all actors of type ASoundActor, then create a corresponding ASoundPawn.
-        for (ASoundActor* SoundActor : SoundActors)
-        {
-            switch (SoundActor->GetSoundType())
+        // Spawn SoundPawns
+        #pragma region SoundPawns
+
+            // Get all actors of type ASoundActor, then create a corresponding ASoundPawn.
+            for (ASoundActor* SoundActor : SoundActors)
             {
-                case ESoundActorType::ST_Background1:
-                    this->SpawnSoundPawn(this->Backgrounds, ESoundActorType::ST_Background1, SoundActor->GetFMODEvent());
-                    break;
+                switch (SoundActor->GetSoundType())
+                {
+                    case ESoundActorType::ST_Background1:
+                        this->SpawnSoundPawn(this->Backgrounds, ESoundActorType::ST_Background1, SoundActor->GetFMODEvent());
+                        break;
 
-                case ESoundActorType::ST_Background2:
-                    this->SpawnSoundPawn(this->Backgrounds, ESoundActorType::ST_Background2, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Emitter1:
-                    this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter1, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Emitter2:
-                    this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter2, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Emitter3:
-                    this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter3, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Emitter4:
-                    this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter4, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Spec1:
-                    this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec1, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Spec2:
-                    this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec2, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Spec3:
-                    this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec3, SoundActor->GetFMODEvent());
-                    break;
-                
-                case ESoundActorType::ST_Spec4:
-                    this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec4, SoundActor->GetFMODEvent());
-                    break;
+                    case ESoundActorType::ST_Background2:
+                        this->SpawnSoundPawn(this->Backgrounds, ESoundActorType::ST_Background2, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Emitter1:
+                        this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter1, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Emitter2:
+                        this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter2, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Emitter3:
+                        this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter3, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Emitter4:
+                        this->SpawnSoundPawn(this->Emitters, ESoundActorType::ST_Emitter4, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Spec1:
+                        this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec1, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Spec2:
+                        this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec2, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Spec3:
+                        this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec3, SoundActor->GetFMODEvent());
+                        break;
+                    
+                    case ESoundActorType::ST_Spec4:
+                        this->SpawnSoundPawn(this->Specs, ESoundActorType::ST_Spec4, SoundActor->GetFMODEvent());
+                        break;
 
-                default:
-                    // Will add a Warning message later.
-                    break;
+                    default:
+                        // Will add a Warning message later.
+                        break;
+                }
+            }
+
+        #pragma endregion
+
+        // Set Bindings
+        #pragma region Bindings
+        {
+            // this->InputComponent->BindAction("SelectBackground1", EInputEvent::IE_Pressed, this, &ABinoraPlayerController::BeginPlay);
+        }
+        #pragma endregion
+    }   
+
+    void ABinoraPlayerController::SetupInputComponent()
+    {
+        Super::SetupInputComponent();
+
+        // Make sure the input component doesn't already exist
+        if (!this->BinoraInputComponent)
+        {
+            // Initialize
+            this->BinoraInputComponent = NewObject<UBinoraInputComponent>(this);
+            this->BinoraInputComponent->RegisterComponent();
+            this->BinoraInputComponent->bBlockInput = false;
+            this->BinoraInputComponent->Priority = 0;
+
+            // Set up delegates
+            if (UInputDelegateBinding::SupportsInputDelegate(this->GetClass()))
+            {
+                UInputDelegateBinding::BindInputDelegates(this->GetClass(), this->BinoraInputComponent);
+            }
+
+            // Push onto the stack
+            this->APlayerController::PushInputComponent(this->BinoraInputComponent);
+
+            // Set up bindings
+            {
+                // Backgrounds
+                this->BinoraInputComponent->BindAction("SelectBackground1", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Backgrounds[*ESoundActorType::ST_Background1]);});
+                this->BinoraInputComponent->BindAction("SelectBackgorund2", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Backgrounds[*ESoundActorType::ST_Background2]);});
+
+                // Emitters
+                this->BinoraInputComponent->BindAction("SelectEmitter1", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Emitters[*ESoundActorType::ST_Emitter1]);});
+                this->BinoraInputComponent->BindAction("SelectEmitter2", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Emitters[*ESoundActorType::ST_Emitter2]);});
+                this->BinoraInputComponent->BindAction("SelectEmitter3", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Emitters[*ESoundActorType::ST_Emitter3]);});
+                this->BinoraInputComponent->BindAction("SelectEmitter4", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Emitters[*ESoundActorType::ST_Emitter4]);});
+
+                // Specs
+                this->BinoraInputComponent->BindAction("SelectSpec1", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Specs[*ESoundActorType::ST_Spec1]);});
+                this->BinoraInputComponent->BindAction("SelectSpec2", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Specs[*ESoundActorType::ST_Spec2]);});
+                this->BinoraInputComponent->BindAction("SelectSpec3", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Specs[*ESoundActorType::ST_Spec3]);});
+                this->BinoraInputComponent->BindAction("SelectSpec4", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->Specs[*ESoundActorType::ST_Spec4]);});
             }
         }
-    }   
+    }
 
 #pragma endregion
 
@@ -104,6 +161,7 @@
             SoundPawnArray[*SoundType] = Cast<ASoundPawn>(this->GetWorld()->SpawnActor<AActor>(ASoundPawn::StaticClass(), FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f)));
             SoundPawnArray[*SoundType]->SetSoundType(SoundType);
             SoundPawnArray[*SoundType]->SetFMODEvent(FMODEvent);
+            SoundPawnArray[*SoundType]->SetActorLabel(~SoundType); // This renames the Actor (so that it is easy to find it in the World Outliner).
         }
     }
 
