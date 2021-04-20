@@ -7,8 +7,10 @@
 #include "FMODAudioComponent.h"
 #include "FMODEvent.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/Controller.h"
 #include "GameFramework/DefaultPawn.h"
 #include "GameFramework/FloatingPawnMovement.h"
+#include "GameFramework/Pawn.h"
 #include "SoundActorType.h"
 #include "UObject/UObjectGlobals.h"
 
@@ -25,7 +27,7 @@ class BINORA_API ASoundPawn : public ADefaultPawn
 {
 	GENERATED_BODY()
 
-	#pragma region Constructors
+	#pragma region Initialization
 
 		public:
 
@@ -34,6 +36,20 @@ class BINORA_API ASoundPawn : public ADefaultPawn
 
 			// Construction script
 			virtual void OnConstruction(const FTransform& Transform) override;
+
+			// Called to bind functionality to input.
+			virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+		protected:
+			
+			// Called when the game starts or when spawned.
+			virtual void BeginPlay() override;
+
+			// Called when this Pawn is possessed.
+			virtual void PossessedBy(AController * NewController) override;
+
+			// Called when the Controller no longer possesses this pawn.
+			virtual void UnPossessed() override;
 
 	#pragma endregion
 
@@ -72,15 +88,6 @@ class BINORA_API ASoundPawn : public ADefaultPawn
 			// Set the SoundType.
 			UFUNCTION()
 			ESoundActorType SetSoundType(ESoundActorType SoundActorType) { this->SoundType = SoundActorType; return this->SoundType; };
-
-	#pragma endregion
-
-	#pragma region Input
-
-		public:	
-
-			// Called to bind functionality to input.
-			virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	#pragma endregion
 
