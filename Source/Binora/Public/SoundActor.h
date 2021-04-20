@@ -61,7 +61,7 @@ class BINORA_API ASoundActor : public AActor
 
 			// Set the FMOD Event.
 			UFUNCTION()
-			UFMODEvent* SetFMODEvent(UFMODEvent* Event) { this->FMODEvent = Event; return this->FMODEvent; };
+			void SetFMODEvent(UFMODEvent* Event) { this->FMODEvent = Event; };
 
 			// Returns the SoundType.
 			UFUNCTION(BlueprintPure)

@@ -8,6 +8,7 @@
 #include "Containers/Array.h"
 #include "SoundActor.h"
 #include "SoundPawn.h"
+#include "Templates/SubclassOf.h"
 #include "GameFramework/PlayerController.h"
 
 #include "BinoraPlayerController.generated.h"
@@ -64,6 +65,10 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 			// Spawns a SoundPawn and sets its SoundActorType and FMODEvent.
 			UFUNCTION()
 			void SpawnSoundPawn(TArray<ASoundPawn*>& SoundPawnArray, ESoundActorType SoundType, UFMODEvent* FMODEvent);
+
+			// The class of ASoundPawn to spawn.
+			UPROPERTY()
+			TSubclassOf<ASoundPawn> SoundPawnClass;
 
 	#pragma endregion
 
