@@ -30,6 +30,12 @@ FMOD/unsaved/
 FMOD/user/
 FMOD/fmod.log
 FMOD/fmod_editor.log
+FMOD/Build/GUIDs.txt
+FMOD/Build/*.bank
+FMOD/Build/*.strings.bank
+Content/FMOD/**/GUIDs.txt
+Content/FMOD/*.bank
+Content/FMOD/*.strings.bank
 
 # Code Editors
 .vs/
