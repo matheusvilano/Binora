@@ -53,7 +53,7 @@
 			<destination>{9ba01c12-c932-4631-a0e9-6c4b789b5dc9}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{a8173c4e-a638-49ee-a0b1-79fd9e411b4a}</destination>
+			<destination>{8b5ea1f7-43a1-4056-bfad-229eee1abf3c}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{1054f476-cab6-497f-a506-3cd5a3528c45}" />
@@ -69,6 +69,9 @@
 	<object class="Timeline" id="{dc8ca758-5350-46e8-8fd0-e6b80f481970}">
 		<relationship name="modules">
 			<destination>{c7dc7634-d297-4844-9678-a7d6f03d5cd3}</destination>
+		</relationship>
+		<relationship name="markers">
+			<destination>{8465a1a8-7695-4cd2-8056-dc684a0938ce}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{04624d09-1f8f-4b15-b3a9-01c2520656db}">
@@ -93,16 +96,25 @@
 			<value>5.8000000000000007</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>45000</value>
+			<value>66</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>165000</value>
+			<value>7000</value>
+		</property>
+		<property name="spawnRate">
+			<value>94</value>
 		</property>
 		<property name="minimumScatterDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumScatterDistance">
 			<value>10</value>
+		</property>
+		<property name="volumeRandomization">
+			<value>-6</value>
+		</property>
+		<property name="pitchRandomization">
+			<value>1</value>
 		</property>
 		<relationship name="sound">
 			<destination>{3c446ef1-4c5d-4c42-8c29-fd02ff0e2626}</destination>
@@ -120,6 +132,20 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{04624d09-1f8f-4b15-b3a9-01c2520656db}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{8465a1a8-7695-4cd2-8056-dc684a0938ce}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>5.8000000000000007</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{dc8ca758-5350-46e8-8fd0-e6b80f481970}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{5eab339d-de98-41bb-9b88-b785fcc55c31}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{10662604-4c2c-4554-9738-52613e9a11ea}">

@@ -5,7 +5,7 @@
 			<value>BG_BeachDIN</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{552f0963-f24e-40aa-b9e0-5cb7696261b6}</destination>
@@ -54,7 +54,7 @@
 			<destination>{5b227500-be25-4939-b5d9-ff139566b2ec}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{a8173c4e-a638-49ee-a0b1-79fd9e411b4a}</destination>
+			<destination>{a4344860-6378-4362-b7b4-626b0a80cc75}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{63306815-78c6-4f75-951e-515a8bc4eb3c}" />
@@ -180,6 +180,7 @@
 	<object class="MixerBusEffectChain" id="{aa72baa4-c75f-469a-9f6e-13755d1caf95}">
 		<relationship name="effects">
 			<destination>{7845afd1-6108-45bb-82f1-df8439880bba}</destination>
+			<destination>{e2145952-5c64-4b69-a904-8673545e089f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c535d567-088d-46e3-a94b-2862d9f45490}" />
@@ -197,6 +198,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{a9b6df75-f269-4593-90de-7d813b5d6027}" />
 	<object class="MixerBusFader" id="{7845afd1-6108-45bb-82f1-df8439880bba}" />
+	<object class="SpatialiserEffect" id="{e2145952-5c64-4b69-a904-8673545e089f}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+		<property name="extentMode">
+			<value>2</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9327b15d-57d1-4366-978e-e31c6b19c162}" />
 	<object class="MixerBusFader" id="{0eee29d0-8262-4c67-af49-4baa1dc0e23b}" />
 </objects>
