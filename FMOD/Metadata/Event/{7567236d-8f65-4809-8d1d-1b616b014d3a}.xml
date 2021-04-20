@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{7567236d-8f65-4809-8d1d-1b616b014d3a}">
 		<property name="name">
-			<value>MenuMusicLoop</value>
+			<value>MS_MainMenu</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -70,8 +70,14 @@
 		<relationship name="modules">
 			<destination>{9207e4ab-d806-4351-abc1-a72928329f9a}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{11ee603f-fefc-4696-84c1-8d93398910a9}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{aefa0c8d-f7b0-46ca-a47c-482c8e9ee8fa}">
+		<relationship name="modulators">
+			<destination>{ba86d7ce-81c1-45c3-ae27-881515184ed4}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{ff789cad-9f03-4ee8-8ed4-fc96b2756ae8}</destination>
 		</relationship>
@@ -89,6 +95,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{e0db28d7-ca19-452b-b1e6-67df79337dea}" />
 	<object class="SingleSound" id="{9207e4ab-d806-4351-abc1-a72928329f9a}">
+		<property name="isAsync">
+			<value>true</value>
+		</property>
 		<property name="length">
 			<value>316.06574999999998</value>
 		</property>
@@ -112,6 +121,43 @@
 		<relationship name="output">
 			<destination>{aefa0c8d-f7b0-46ca-a47c-482c8e9ee8fa}</destination>
 		</relationship>
+	</object>
+	<object class="LoopRegion" id="{11ee603f-fefc-4696-84c1-8d93398910a9}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>316.06574999999998</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{ea91cc30-2e0b-4765-aa7f-2ac303655065}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{35027f17-39e8-4a51-afde-601b005e08bd}</destination>
+		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{ba86d7ce-81c1-45c3-ae27-881515184ed4}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>7000</value>
+		</property>
+		<property name="attackShape">
+			<value>-1.00000048</value>
+		</property>
+		<property name="releaseTime">
+			<value>2200</value>
+		</property>
+		<property name="releaseShape">
+			<value>0.215306774</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{ff789cad-9f03-4ee8-8ed4-fc96b2756ae8}">
 		<relationship name="effects">
