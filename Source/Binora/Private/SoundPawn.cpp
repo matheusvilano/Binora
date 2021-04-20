@@ -6,7 +6,7 @@
 #include "Components/SphereComponent.h"
 #include "Components/StaticMeshComponent.h"
 
-#pragma region Constructors
+#pragma region Initialization
 
 	// Sets default values
 	ASoundPawn::ASoundPawn()
@@ -49,10 +49,6 @@
 		this->AActor::SetActorLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
 
-#pragma endregion
-
-#pragma region Framework
-
 	// Called to bind functionality to input
 	void ASoundPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	{
@@ -67,6 +63,31 @@
 		{
 			PlayerInputComponent->BindAxis("Panning", this, &ADefaultPawn::MoveRight);
 		}
+	}
+
+	// Called when the game starts or when spawned
+	void ASoundPawn::BeginPlay()
+	{
+		// Parent's BeginPlay
+		Super::BeginPlay();
+
+		// Play sound as soon as the Actor lives, but pause it (will resume OnPossessed).
+		this->FMODAudioComponent->Play();
+		this->FMODAudioComponent->SetPaused(true);
+	}
+
+#pragma endregion
+
+#pragma region Possession
+
+	void ASoundPawn::PossessedBy(AController * NewController)
+	{
+		this->FMODAudioComponent->SetPaused(false);
+	}
+
+	void ASoundPawn::UnPossessed()
+	{
+		this->FMODAudioComponent->SetPaused(true);
 	}
 
 #pragma endregion
