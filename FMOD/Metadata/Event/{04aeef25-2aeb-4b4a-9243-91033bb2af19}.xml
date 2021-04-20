@@ -32,9 +32,6 @@
 		<relationship name="timeline">
 			<destination>{15c25b34-4f0b-4039-98a3-7d53d761e69f}</destination>
 		</relationship>
-		<relationship name="parameters">
-			<destination>{70e6588e-ca54-496b-83ff-0b1e7e8ba7c0}</destination>
-		</relationship>
 		<relationship name="banks">
 			<destination>{d0253fc5-9d5c-4309-9192-ef21fa8a401b}</destination>
 		</relationship>
@@ -57,15 +54,13 @@
 			<destination>{88eee702-8177-439d-8a25-6237d60ff3f4}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{8b5ea1f7-43a1-4056-bfad-229eee1abf3c}</destination>
+			<destination>{a8173c4e-a638-49ee-a0b1-79fd9e411b4a}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{58904dfa-ae6a-4aa7-9f09-f866bba56250}" />
 	<object class="MarkerTrack" id="{d447196b-a9bd-4e52-bcd4-552e89a93265}" />
 	<object class="GroupTrack" id="{be7eb19a-0c95-42e6-b4e3-5fa7902f0f55}">
 		<relationship name="modules">
-			<destination>{99f15f05-a8d5-4490-bdcd-e9871cba5929}</destination>
-			<destination>{17d2afd8-824c-453b-9002-669ce0ad719d}</destination>
 			<destination>{28a37d3f-7024-4263-8ee3-3f8b5992c1a4}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
@@ -73,9 +68,6 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{1d45b3aa-0a5a-464a-a750-7fde89f5c22f}">
-		<relationship name="modules">
-			<destination>{c8d81cce-648c-4454-8721-db7294fbf460}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{c1a58360-e6e1-46de-8ec5-2ff8f29ae696}</destination>
 		</relationship>
@@ -83,19 +75,9 @@
 	<object class="Timeline" id="{15c25b34-4f0b-4039-98a3-7d53d761e69f}">
 		<relationship name="modules">
 			<destination>{28a37d3f-7024-4263-8ee3-3f8b5992c1a4}</destination>
-			<destination>{c8d81cce-648c-4454-8721-db7294fbf460}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{17f4e783-7db2-4778-9733-5c0a887b51dc}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{70e6588e-ca54-496b-83ff-0b1e7e8ba7c0}">
-		<relationship name="modules">
-			<destination>{99f15f05-a8d5-4490-bdcd-e9871cba5929}</destination>
-			<destination>{17d2afd8-824c-453b-9002-669ce0ad719d}</destination>
-		</relationship>
-		<relationship name="preset">
-			<destination>{e1d4d4f3-c0ad-459e-8f86-ca8661d8f056}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9d4ed442-1d15-4ec7-b61a-7cdd9a3466eb}">
@@ -115,31 +97,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{88eee702-8177-439d-8a25-6237d60ff3f4}" />
-	<object class="SingleSound" id="{99f15f05-a8d5-4490-bdcd-e9871cba5929}">
-		<property name="triggerProbabilityEnabled">
-			<value>true</value>
-		</property>
-		<property name="looping">
-			<value>true</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{71df3e33-1434-41ba-b6f4-f834eebd1fd0}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{17d2afd8-824c-453b-9002-669ce0ad719d}">
-		<property name="triggerProbabilityEnabled">
-			<value>true</value>
-		</property>
-		<property name="triggerProbability">
-			<value>29.5</value>
-		</property>
-		<property name="start">
-			<value>1</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{71df3e33-1434-41ba-b6f4-f834eebd1fd0}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{28a37d3f-7024-4263-8ee3-3f8b5992c1a4}">
 		<property name="triggerProbabilityEnabled">
 			<value>true</value>
@@ -166,17 +123,6 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{9d4ed442-1d15-4ec7-b61a-7cdd9a3466eb}</destination>
-		</relationship>
-	</object>
-	<object class="EventSound" id="{c8d81cce-648c-4454-8721-db7294fbf460}">
-		<property name="start">
-			<value>30.5</value>
-		</property>
-		<property name="length">
-			<value>35.5</value>
-		</property>
-		<relationship name="event">
-			<destination>{263fb8bc-83cc-45a6-86db-641dc4859c17}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c1a58360-e6e1-46de-8ec5-2ff8f29ae696}">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{8889fd8e-b0df-416c-b6bb-db98f5452476}">
+	<object class="AudioFile" id="{fe035700-d809-4bac-8760-090d78cfa233}">
 		<property name="assetPath">
-			<value>HauntedHouse/BG_HauntedHouse/BG_CabinRattle.wav</value>
+			<value>HauntedHouse/EM_HauntedHouse/EM_MusicBox.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -14,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>47.38066666666667</value>
+			<value>53.024666666666668</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b68ee951-2152-4eaf-bd21-6b5c314b6c31}</destination>
