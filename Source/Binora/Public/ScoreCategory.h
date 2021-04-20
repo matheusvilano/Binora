@@ -13,10 +13,10 @@
 UENUM(BlueprintType)
 enum class EScoreCategory : uint8
 {
-	SC_Subpar = 0		UMETA(DisplayName="Subpar"),
-	SC_Good = 25		UMETA(DisplayName="Good"),
-	SC_Great = 50		UMETA(DisplayName="Great"),
-	SC_Perfect = 100	UMETA(DisplayName="Perfect")
+	SC_Subpar 	= 0		UMETA(DisplayName="Subpar"),
+	SC_Good 	= 25	UMETA(DisplayName="Good"),
+	SC_Great	= 50	UMETA(DisplayName="Great"),
+	SC_Perfect 	= 100	UMETA(DisplayName="Perfect")
 };
 
 // Returns the Score Category as Text.
