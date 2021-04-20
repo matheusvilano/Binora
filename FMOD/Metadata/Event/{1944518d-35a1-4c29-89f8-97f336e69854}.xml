@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{1944518d-35a1-4c29-89f8-97f336e69854}">
 		<property name="name">
-			<value>UI_Type3</value>
+			<value>UI_PlayButtonClicked</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -56,7 +56,11 @@
 			<destination>{a8173c4e-a638-49ee-a0b1-79fd9e411b4a}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{271eadd0-916d-4305-b100-e4a398c0bcfc}" />
+	<object class="EventAutomatableProperties" id="{271eadd0-916d-4305-b100-e4a398c0bcfc}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{bef55e33-cbd8-4127-a19a-acd90cd4a613}" />
 	<object class="GroupTrack" id="{b15fbcb5-c386-4bef-ba56-cecf0919cb4f}">
 		<relationship name="modules">
@@ -72,6 +76,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b0f00405-9974-4ba2-ac0b-0fa2cf6c1df4}">
+		<relationship name="modulators">
+			<destination>{7a8cefae-e615-4767-bc52-35650f6166fe}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{1bd601f7-c5d5-4902-97f5-3d36d867c439}</destination>
 		</relationship>
@@ -98,7 +105,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{32bffbdb-f102-406a-8634-e5c5b89ec319}">
 		<property name="name">
-			<value>Audio 1</value>
+			<value>UI</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{feebb4d5-261e-4cdf-a83d-288090d1c5ca}</destination>
@@ -109,6 +116,14 @@
 		<relationship name="output">
 			<destination>{b0f00405-9974-4ba2-ac0b-0fa2cf6c1df4}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{7a8cefae-e615-4767-bc52-35650f6166fe}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>0.400000006</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{1bd601f7-c5d5-4902-97f5-3d36d867c439}">
 		<relationship name="effects">
