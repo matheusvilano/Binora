@@ -70,10 +70,6 @@
 	{
 		// Parent's BeginPlay
 		Super::BeginPlay();
-
-		// Play sound as soon as the Actor lives, but pause it (will resume OnPossessed).
-		this->FMODAudioComponent->Play();
-		this->FMODAudioComponent->SetPaused(true);
 	}
 
 #pragma endregion
@@ -82,12 +78,12 @@
 
 	void ASoundPawn::PossessedBy(AController * NewController)
 	{
-		this->FMODAudioComponent->SetPaused(false);
+		this->FMODAudioComponent->Play();
 	}
 
 	void ASoundPawn::UnPossessed()
 	{
-		this->FMODAudioComponent->SetPaused(true);
+		this->FMODAudioComponent->Stop();
 	}
 
 #pragma endregion

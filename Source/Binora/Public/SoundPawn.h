@@ -58,14 +58,10 @@ class BINORA_API ASoundPawn : public ADefaultPawn
 		private:
 			
 			// The FMOD component in charge of managing sound for this Pawn.
-			UPROPERTY(BlueprintReadOnly, DisplayName="FMOD Audio Component", Meta=(AllowPrivateAccess=true))
+			UPROPERTY(BlueprintReadOnly, EditAnywhere, DisplayName="FMOD Audio Component", Meta=(AllowPrivateAccess=true))
 			UFMODAudioComponent* FMODAudioComponent = nullptr;
 
 		protected:
-
-			// The FMOD Event to play on this Pawn.
-			UPROPERTY(BlueprintReadOnly, Category="Sound Pawn", EditInstanceOnly, DisplayName="FMOD Event", Meta=(ExposeOnSpawn=true))
-			UFMODEvent* FMODEvent = nullptr;
 
 			// What type of SoundPawn this is.
 			UPROPERTY(BlueprintReadOnly, Category="Sound Pawn", BlueprintGetter=GetSoundType, EditInstanceOnly, DisplayName="Sound Type", Meta=(ExposeOnSpawn=true))
@@ -73,13 +69,9 @@ class BINORA_API ASoundPawn : public ADefaultPawn
 
 		public:
 
-			// Get the FMOD Event.
+			// Returns this pawn's FMODAudioComponent.
 			UFUNCTION()
-			UFMODEvent* GetFMODEvent() { return this->FMODEvent; };
-
-			// Set the FMOD Event.
-			UFUNCTION()
-			UFMODEvent* SetFMODEvent(UFMODEvent* Event) { this->FMODEvent = Event; return this->FMODEvent; };
+			UFMODAudioComponent* GetFMODAudioComponent() { return this->FMODAudioComponent; };
 
 			// Get the SoundType.
 			UFUNCTION(BlueprintPure)
