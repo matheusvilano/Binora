@@ -4,6 +4,7 @@
 
 #include "Delegates/DelegateInstancesImpl.h"
 #include "Engine/InputDelegateBinding.h"
+#include "GameFramework/GameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 
 #pragma region Inherited
@@ -19,7 +20,10 @@
     void ABinoraPlayerController::BeginPlay()
     {
         // Set AudioListener to centre of the MAP (world coordinates).
-        this->APlayerController::SetAudioListenerOverride(nullptr, FVector(0.0f), FRotator(0.0f));
+        this->APlayerController::SetAudioListenerOverride(nullptr, FVector(-100.0f, 0.0f, 0.0f), FRotator(0.0f));
+
+        // Set the ASoundPawn class to spawn, according to the GameMode settings.
+        this->SoundPawnClass = UGameplayStatics::GetGameMode(this->AActor::GetWorld())->GetDefaultPawnClassForController(this);
 
         // Get and set SoundActor references
         #pragma region SoundActors
@@ -158,9 +162,9 @@
     {
         if (!SoundPawnArray[*SoundType]) // only proceed if the pointer is a nullptr
         {
-            SoundPawnArray[*SoundType] = Cast<ASoundPawn>(this->GetWorld()->SpawnActor<AActor>(ASoundPawn::StaticClass(), FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f)));
+            SoundPawnArray[*SoundType] = Cast<ASoundPawn>(this->GetWorld()->SpawnActor<AActor>(SoundPawnClass, FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f)));
             SoundPawnArray[*SoundType]->SetSoundType(SoundType);
-            SoundPawnArray[*SoundType]->SetFMODEvent(FMODEvent);
+            SoundPawnArray[*SoundType]->GetFMODAudioComponent()->SetEvent(FMODEvent);
             SoundPawnArray[*SoundType]->SetActorLabel(~SoundType); // This renames the Actor (so that it is easy to find it in the World Outliner).
         }
     }

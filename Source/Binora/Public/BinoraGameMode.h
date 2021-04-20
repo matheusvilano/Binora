@@ -17,21 +17,20 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
-	#pragma region Constructors
+	#pragma region Initialization
 
 		public:
 
 			// No-parameter constructor for objects of the ABinoraGameMoseBase class.
 			ABinoraGameMode();
 
-	#pragma endregion
-
-	#pragma region Framework
-
 		protected:
 
-			// Will be used to initialize MaxScore
+			// Will be used to initialize MaxScore.
 			virtual void BeginPlay() override;
+
+			// Called during RestartPlayer to actually spawn the player's pawn, when using a start spot.
+			virtual APawn* SpawnDefaultPawnFor_Implementation(AController* NewPlayer, class AActor* StartSpot) override;
 
 	#pragma endregion
 
@@ -72,4 +71,11 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 			// void SetGameOver(bool bGameOverState = false);
 
 	#pragma endregion
+
+	#pragma region Other
+
+		private:
+
+			// Whether or not to spawn a pawn of the Default Pawn Class once the game starts.
+			const bool bSpawnDefaultPawn = false;
 };
