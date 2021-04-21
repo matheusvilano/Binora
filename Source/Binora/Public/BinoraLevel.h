@@ -10,6 +10,11 @@
 
 #include "BinoraLevel.generated.h"
 
+#define BINORA_MAP_MAINMENU TEXT("MAP_MainMenu")
+#define BINORA_MAP_BEACH 	TEXT("MAP_Beach")
+#define BINORA_MAP_CABIN 	TEXT("MAP_Cabin")
+#define BINORA_MAP_HOUSE 	TEXT("MAP_House")
+
 /**
  * The base code for a Binora level.
  */
