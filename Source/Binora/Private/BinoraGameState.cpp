@@ -3,3 +3,20 @@
 
 #include "BinoraGameState.h"
 
+#pragma region State
+
+    void ABinoraGameState::SetLevelState(EBinoraLevelState NewLevelState)
+    { 
+        this->LevelState = NewLevelState; 
+    }
+
+#pragma endregion
+
+#pragma region Timer
+
+	float ABinoraGameState::DecrementMemorizationTimer() 
+    { 
+        return --this->MemorizationTimer; 
+    }
+
+#pragma endregion

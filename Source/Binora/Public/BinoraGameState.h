@@ -26,11 +26,27 @@ class BINORA_API ABinoraGameState : public AGameStateBase
 			UPROPERTY(BlueprintReadOnly, DisplayName="Level State")
 			EBinoraLevelState LevelState = EBinoraLevelState::BLS_Narration;
 
+		public:
+
+			// The current Level State: Narration, Memorization, Replication, Audition, or Evaluation.
+			UFUNCTION()
+			void SetLevelState(EBinoraLevelState NewLevelState);
+
+	#pragma endregion
+
+	#pragma region Timer
+
+		public:
+
+			// This should run every second.
+			UFUNCTION()
+			float DecrementMemorizationTimer();
+
+		protected:
+
 			// The amount of time before the Memorization state is over. Replication comes next.
 			UPROPERTY(BlueprintReadOnly, DisplayName="Memorization Timer")
 			float MemorizationTimer = 60.0f; // In seconds (one minute).
 
 	#pragma endregion
-
-
 };

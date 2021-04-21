@@ -6,14 +6,15 @@
 
 #include "Engine/LevelScriptActor.h"
 #include "FMODAudioComponent.h"
+#include "FMODBus.h"
 
-#include "BinoraLevelBase.generated.h"
+#include "BinoraLevel.generated.h"
 
 /**
  * The base code for a Binora level.
  */
 UCLASS()
-class BINORA_API ABinoraLevelBase : public ALevelScriptActor
+class BINORA_API ABinoraLevel : public ALevelScriptActor
 {
 	GENERATED_BODY()
 
@@ -22,7 +23,7 @@ class BINORA_API ABinoraLevelBase : public ALevelScriptActor
 		public:
 
 			// Constructor.
-			ABinoraLevelBase();
+			ABinoraLevel();
 
 		protected:
 			
@@ -40,12 +41,28 @@ class BINORA_API ABinoraLevelBase : public ALevelScriptActor
 			UFMODAudioComponent* FMODAudioComponent = nullptr;
 
 			// The opening line to be said by the narrator (brief instructions).
-			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora", DisplayName="FMOD Event (BeginPlay)")
+			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora", DisplayName="FMOD Event (BeginPlay)")
 			UFMODEvent* FMODEventBeginPlay = nullptr;
 
 			// The ending line to be said by the narrator (score category + thanks).
-			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora", DisplayName="FMOD Event (GameOver)")
+			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora", DisplayName="FMOD Event (GameOver)")
 			UFMODEvent* FMODEventGameOver = nullptr;
+
+			// Callback for FMODEventBeginPlay.
+			UFUNCTION()
+			void OnFMODEventBeginPlayStopped();
+
+			// Callback for FMODEventGameOver.
+			UFUNCTION()
+			void OnFMODEventGameOverStopped();
+
+			// Blueprint event that gets called once the timer starts.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora", DisplayName="Level Started")
+			void LevelStarted();
+
+			// Blueprint event that gets called once the timer starts.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora", DisplayName="Level Ended")
+			void LevelEnded();
 
 	#pragma endregion
 

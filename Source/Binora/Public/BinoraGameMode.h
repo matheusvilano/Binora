@@ -70,10 +70,33 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 
 	#pragma endregion
 
+	#pragma region Timer
+
+		protected:
+
+		    // Handle to be used by the Time Manager
+        	UPROPERTY();
+			FTimerHandle MemorizationTimerHandle;
+
+
+			// This should run every second.
+			UFUNCTION()
+			void DecrementMemorizationTimer();
+
+		public:
+		
+			// Starts the memorization timer and sets the state to Memorization.
+			UFUNCTION()
+			void StartMemorizationTimer();
+
+	#pragma endregion
+
 	#pragma region Other
 
 		private:
 
 			// Whether or not to spawn a pawn of the Default Pawn Class once the game starts.
 			const bool bSpawnDefaultPawn = false;
+
+	#pragma endregion
 };
