@@ -34,10 +34,15 @@
         // Super BeginPlay.
         Super::BeginPlay();
 
-        // Update the FMODAudioComponent with the BeginPlay event, then play it.
+        // Update the FMODAudioComponent with the BeginPlay event.
         this->FMODAudioComponent->SetEvent(this->FMODEventBeginPlay);
-        this->FMODAudioComponent->Play();
+
+        // Automatically handle the Timer once the VO (BeginPlay) is done.
         this->FMODAudioComponent->OnEventStopped.AddDynamic(this, &ABinoraLevel::OnFMODEventBeginPlayStopped);
+
+        // Play the VO (BeginPlay).
+        this->FMODAudioComponent->Play();
+
     }
 
 #pragma endregion
@@ -47,8 +52,8 @@
     // The GameOver event's default implementation.
     void ABinoraLevel::GameOver_Implementation()
     {
-        // Update the FMODAudioComponent with the GameOver event, then play it.
-        this->FMODAudioComponent->SetEvent(this->FMODEventGameOver);
+        // Make sure the FMODAudioComponent has the GameOver event, then play it.
+        this->FMODAudioComponent->SetEvent(this->FMODEventGameOver); // Not necessary, but good to have.
         this->FMODAudioComponent->Play();
     }
 
@@ -59,6 +64,18 @@
     // Callback for FMODEventBeginPlay.
 	void ABinoraLevel::OnFMODEventBeginPlayStopped()
     {
+        // New audio settings (change VO from BeginPlay to GameOver)
+        {
+            // Remove all previous bindings.
+            this->FMODAudioComponent->OnEventStopped.RemoveAll(this);
+
+            // Update the FMODAudioComponent with the GameOver event.
+            this->FMODAudioComponent->SetEvent(this->FMODEventGameOver);
+
+            // Automatically load the Main Menu oncea the game is over.
+            this->FMODAudioComponent->OnEventStopped.AddDynamic(this, &ABinoraLevel::OnFMODEventGameOverStopped);
+        }
+
         // Start the Memorization Timer.
         Cast<ABinoraGameMode>(UGameplayStatics::GetGameMode(this->AActor::GetWorld()))->StartMemorizationTimer();
 
@@ -72,6 +89,9 @@
     // Callback for FMODEventGameOver.
     void ABinoraLevel::OnFMODEventGameOverStopped()
     {
+        // Load the main menu
+        UGameplayStatics::OpenLevel(this->AActor::GetWorld(), BINORA_MAP_MAINMENU);
+
         // Blueprint Event.
         this->LevelEnded();
     }
