@@ -12,10 +12,7 @@
     // Will be used to initialize MaxScore.
     void ABinoraGameMode::BeginPlay()
     {
-        // GET ALL ACTORS OF TYPE <>
-        // COUNT THEM
-        // MULTIPLY BY 3
-        // SET MAXSCORE
+        
     }
 
     // Called during RestartPlayer to actually spawn the player's pawn, when using a start spot.
@@ -47,6 +44,13 @@
         return 100 * this->Score / this->MaxScore;
     }
 
+    // Adds a certain number to the score.
+    inline void ABinoraGameMode::SetScore(uint8 NewScore)
+    {
+        // Only set the new score if it is within the 0-100 range.
+        this->Score = (NewScore >= 0 && NewScore <= 100) ? NewScore : this->Score;
+    }
+
     // Returns the score as a category (Subpar, Good, Great, or Perfect).
     EScoreCategory ABinoraGameMode::GetScoreAsCategory() const
     {
@@ -73,6 +77,16 @@
         {
             return EScoreCategory::SC_Perfect;
         }
+    }
+
+#pragma endregion
+
+#pragma region State
+
+    // Sets the Game Over state (generally to false).
+    void ABinoraGameMode::EndGame_Implementation()
+    {
+        throw "To be implemented.";
     }
 
 #pragma endregion

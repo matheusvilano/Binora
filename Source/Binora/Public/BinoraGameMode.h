@@ -39,16 +39,18 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 		protected:
 
 			// The player's score (based on the position of the SoundPawns). 
-			UPROPERTY(BlueprintReadOnly, DisplayName="Score", Meta=(ClampMin=0, ClampMax=100))
 			uint8 Score = 0;
 
 			// The player's score (based on the position of the SoundPawns). 
-			UPROPERTY(BlueprintReadOnly, DisplayName="Max Score", Meta=(ClampMin=0, ClampMax=100))
-			uint8 MaxScore = 100;
+			static const uint8 MaxScore = 100;
 
 			// Adds a certain number to the score.
-			UFUNCTION()
+			UFUNCTION(BlueprintCallable, Category="Score")
 			void AddScore(uint8 Addend);
+
+			// Sets the score.
+			UFUNCTION(BlueprintCallable, Category="Score")
+			void SetScore(uint8 NewScore);
 
 			// Returns the score as a percentage.
 			UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -61,14 +63,10 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 	#pragma region State
 
 		protected:
-			
-			// Whether or not the game is over.
-			UPROPERTY(BlueprintReadOnly, DisplayName="Game Over State")
-			bool bGameOver = false;
 
 			// Sets the Game Over state (generally to false).
-			// UFUNCTION(BlueprintNativeEvent, Exec)
-			// void SetGameOver(bool bGameOverState = false);
+			UFUNCTION(BlueprintNativeEvent, Exec)
+			void EndGame();
 
 	#pragma endregion
 
