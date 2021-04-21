@@ -2,6 +2,9 @@
 
 #include "BinoraGameMode.h"
 
+#include "BinoraGameState.h"
+#include "BinoraHUD.h"
+#include "GameFramework/Actor.h"
 #include "Kismet/GameplayStatics.h"
 
 #pragma region Initialization
@@ -9,10 +12,11 @@
     // No-parameter constructor for objects of the ABinoraGameMoseBase class.
     ABinoraGameMode::ABinoraGameMode(){}
 
-    // Will be used to initialize MaxScore.
+    // Initializes the Level State.
     void ABinoraGameMode::BeginPlay()
     {
-        
+        // Set Level State to Narration.
+        this->GetGameState<ABinoraGameState>()->SetLevelState(EBinoraLevelState::BLS_Narration);
     }
 
     // Called during RestartPlayer to actually spawn the player's pawn, when using a start spot.
@@ -87,6 +91,31 @@
     void ABinoraGameMode::EndGame_Implementation()
     {
         throw "To be implemented.";
+    }
+
+    // Starts the memorization timer and sets the state to Memorization.
+    void ABinoraGameMode::StartMemorizationTimer()
+    {
+        // Set the Level State to Memorization, then start decrementing the memorization time every second.
+        this->GetGameState<ABinoraGameState>()->SetLevelState(EBinoraLevelState::BLS_Memorization);
+        this->AActor::GetWorldTimerManager().SetTimer(this->MemorizationTimerHandle, this, &ABinoraGameMode::DecrementMemorizationTimer, 1.0f, true, 0.0f);
+    }
+
+    // The memorization timer should decrement every second.
+    void ABinoraGameMode::DecrementMemorizationTimer()
+    {
+        // Decrement the MemorizationTimer on the GameState. If <=0, stop decrementing and set Level State to Replication. 
+        if (this->GetGameState<ABinoraGameState>()->DecrementMemorizationTimer() <= 0)
+        {
+            // Stop decrementing the timer.
+            GetWorldTimerManager().ClearTimer(this->MemorizationTimerHandle);
+
+            // Get HUD (via PlayerController; casted to ABinoraHUD), then create the Timer widget.
+            Cast<ABinoraHUD>(UGameplayStatics::GetPlayerController(this->AActor::GetWorld(), 0)->GetHUD())->DestroyTimerWidget();
+
+            // Update Level State to Replication
+            this->GetGameState<ABinoraGameState>()->SetLevelState(EBinoraLevelState::BLS_Replication);
+        }
     }
 
 #pragma endregion
