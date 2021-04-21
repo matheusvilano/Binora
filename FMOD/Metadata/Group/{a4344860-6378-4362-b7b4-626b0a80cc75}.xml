@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{a4344860-6378-4362-b7b4-626b0a80cc75}">
 		<property name="name">
-			<value>Beach_BG</value>
+			<value>BG_Beach</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{0d590d56-611d-41cd-be9b-91201b6bc00d}</destination>

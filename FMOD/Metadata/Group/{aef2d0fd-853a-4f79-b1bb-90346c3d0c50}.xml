@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{aef2d0fd-853a-4f79-b1bb-90346c3d0c50}">
-		<property name="note" />
 		<property name="name">
-			<value>Beach_EM</value>
+			<value>EM_Beach</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{7d8f59e0-fc7b-4b8f-a524-0643e6bd3444}</destination>
