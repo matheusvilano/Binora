@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{4fe86445-e18d-4bac-abb4-73e05756a18e}">
 		<property name="name">
-			<value>Haunted House</value>
+			<value>HauntedHouse</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{61a53f8f-b91a-4ea1-9ae1-6680deed9030}</destination>
@@ -11,7 +11,7 @@
 			<destination>{1810bd9d-581d-4bda-976d-193d58c79fa9}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{a8173c4e-a638-49ee-a0b1-79fd9e411b4a}</destination>
+			<destination>{53891215-5eb4-4033-b336-7a94a4537c16}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{61a53f8f-b91a-4ea1-9ae1-6680deed9030}">

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{e1941fc6-6ec9-4ba6-911c-4c27292e2759}">
+		<property name="name">
+			<value>EM_HauntedHouse</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{8d1b8cf0-fb6e-4ac5-b35c-0fd4320f001a}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{b480ae71-774c-4c11-8314-0049e668d104}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{4fe86445-e18d-4bac-abb4-73e05756a18e}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{8d1b8cf0-fb6e-4ac5-b35c-0fd4320f001a}">
+		<relationship name="effects">
+			<destination>{ac2b49a8-4ae0-4e51-82ae-341d7f1365aa}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{b480ae71-774c-4c11-8314-0049e668d104}" />
+	<object class="MixerBusFader" id="{ac2b49a8-4ae0-4e51-82ae-341d7f1365aa}" />
+</objects>
