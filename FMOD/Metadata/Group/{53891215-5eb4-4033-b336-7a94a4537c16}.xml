@@ -32,8 +32,5 @@
 		<property name="releaseTime">
 			<value>1000</value>
 		</property>
-		<relationship name="sidechains">
-			<destination>{d9354c2c-0f6a-4a93-a3f9-fa9ccafa177b}</destination>
-		</relationship>
 	</object>
 </objects>
