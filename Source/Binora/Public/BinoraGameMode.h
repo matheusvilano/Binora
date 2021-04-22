@@ -78,7 +78,6 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
         	UPROPERTY();
 			FTimerHandle MemorizationTimerHandle;
 
-
 			// This should run every second.
 			UFUNCTION()
 			void DecrementMemorizationTimer();
