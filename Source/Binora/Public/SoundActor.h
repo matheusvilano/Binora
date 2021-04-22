@@ -43,7 +43,7 @@ class BINORA_API ASoundActor : public AActor
 		protected:
 
 			// This component will handle playing and stopping sounds.
-			UPROPERTY(BlueprintReadOnly, DisplayName="FMOD Audio Component")
+			UPROPERTY(BlueprintReadOnly, BlueprintGetter=GetFMODAudioComponent, DisplayName="FMOD Audio Component")
 			UFMODAudioComponent* FMODAudioComponent = nullptr;
 
 			UPROPERTY(BlueprintReadOnly, EditInstanceOnly, Category="Sound Pawn|Sound", DisplayName="FMOD Event")
@@ -54,6 +54,10 @@ class BINORA_API ASoundActor : public AActor
 			ESoundActorType SoundType = ESoundActorType::ST_Unspecified;
 
 		public:
+
+			// Get the FMOD Audio Component.
+			UFUNCTION(BlueprintPure)
+			UFMODAudioComponent* GetFMODAudioComponent();
 
 			// Get the FMOD Event.
 			UFUNCTION()

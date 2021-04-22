@@ -42,15 +42,15 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 		protected:
 
 			// The FMOD component in charge of managing the narration sound.
-			UPROPERTY(BlueprintReadOnly, Category="Binora", DisplayName="FMOD Audio Component")
+			UPROPERTY(BlueprintReadOnly, Category="Binora|FMOD", DisplayName="FMOD Audio Component")
 			UFMODAudioComponent* FMODAudioComponent = nullptr;
 
 			// The opening line to be said by the narrator (brief instructions).
-			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora", DisplayName="FMOD Event (BeginPlay)")
+			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (BeginPlay)")
 			UFMODEvent* FMODEventBeginPlay = nullptr;
 
 			// The ending line to be said by the narrator (score category + thanks).
-			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora", DisplayName="FMOD Event (GameOver)")
+			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (GameOver)")
 			UFMODEvent* FMODEventGameOver = nullptr;
 
 			// Callback for FMODEventBeginPlay.
@@ -62,11 +62,11 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			void OnFMODEventGameOverStopped();
 
 			// Blueprint event that gets called once the timer starts.
-			UFUNCTION(BlueprintImplementableEvent, Category="Binora", DisplayName="Level Started")
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|State", DisplayName="Level Started")
 			void LevelStarted();
 
 			// Blueprint event that gets called once the timer starts.
-			UFUNCTION(BlueprintImplementableEvent, Category="Binora", DisplayName="Level Ended")
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|State", DisplayName="Level Ended")
 			void LevelEnded();
 
 	#pragma endregion
@@ -76,7 +76,7 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 		protected:
 
 			// The GameOver event.
-			UFUNCTION(BlueprintNativeEvent)
+			UFUNCTION(BlueprintCallable, Category="Binora|State", DisplayName="Game Over")
 			void GameOver();
 
 	#pragma endregion
