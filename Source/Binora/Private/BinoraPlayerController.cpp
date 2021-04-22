@@ -26,31 +26,25 @@
         this->SoundPawnClass = UGameplayStatics::GetGameMode(this->AActor::GetWorld())->GetDefaultPawnClassForController(this);
 
         // Get and set SoundActor references
-        #pragma region SoundActors
-
-            // Array to be used when creating SoundPawns.
-            TArray<ASoundActor*> SoundActors;
-        
+        #pragma region Actors
+        {
             // Find SoundActors and add them to the SoundActors array (Cast first).
+            TArray<AActor*> FoundActors; // Will temporarily store the actors found.
+            UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASoundActor::StaticClass(), FoundActors);
+
+            // Cast and add to array.
+            for (AActor* FoundActor : FoundActors)
             {
-                // Find SoundActors.
-                TArray<AActor*> FoundActors; // Will temporarily store the actors found.
-                UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASoundActor::StaticClass(), FoundActors);
-
-                // Cast and add to array.
-                for (AActor* FoundActor : FoundActors)
-                {
-                    SoundActors.Add(Cast<ASoundActor>(FoundActor));
-                }
+                this->SoundActors.Add(Cast<ASoundActor>(FoundActor));
             }
-
+        }
         #pragma endregion
 
         // Spawn SoundPawns
         #pragma region SoundPawns
 
             // Get all actors of type ASoundActor, then create a corresponding ASoundPawn.
-            for (ASoundActor* SoundActor : SoundActors)
+            for (ASoundActor* SoundActor : this->SoundActors)
             {
                 switch (SoundActor->GetSoundType())
                 {
@@ -100,13 +94,6 @@
                 }
             }
 
-        #pragma endregion
-
-        // Set Bindings
-        #pragma region Bindings
-        {
-            // this->InputComponent->BindAction("SelectBackground1", EInputEvent::IE_Pressed, this, &ABinoraPlayerController::BeginPlay);
-        }
         #pragma endregion
     }   
 
@@ -167,6 +154,12 @@
             SoundPawnArray[*SoundType]->GetFMODAudioComponent()->SetEvent(FMODEvent);
             SoundPawnArray[*SoundType]->SetActorLabel(~SoundType); // This renames the Actor (so that it is easy to find it in the World Outliner).
         }
+    }
+
+    // Get the Sound Actors.
+    TArray<ASoundActor*> ABinoraPlayerController::GetSoundActors()
+    {
+        return this->SoundActors;
     }
 
 #pragma endregion
