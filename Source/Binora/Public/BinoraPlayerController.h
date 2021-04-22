@@ -48,18 +48,36 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 
 	#pragma region Sound
 	
+		public:
+
+			// Enable input on all SoundPawns.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns", DisplayName="Enable All Sound Pawns")
+			void EnableAllSoundPawns();
+
+			// Disable input on all SoundPawns.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns", DisplayName="Disable All Sound Pawns")
+			void DisableAllSoundPawns();
+
+			// Get the SoundActors.
+			UFUNCTION(BlueprintPure)
+			TArray<ASoundActor*> GetSoundActors();	
+
 		protected:
 
+			// All SoundActors. Array to be used when creating SoundPawns.
+			UPROPERTY(BlueprintReadOnly, BlueprintGetter=GetSoundActors, Category="Binora|Actors", DisplayName="Sound Actors")
+            TArray<ASoundActor*> SoundActors;
+
 			// The Background SoundPawns.
-			UPROPERTY(BlueprintReadOnly, DisplayName="Backgrounds")
+			UPROPERTY(BlueprintReadOnly, Category="Binora|Pawns", DisplayName="Backgrounds")
 			TArray<ASoundPawn*> Backgrounds;
 
 			// The Emitter SoundPawns.
-			UPROPERTY(BlueprintReadOnly, DisplayName="Emitters")
+			UPROPERTY(BlueprintReadOnly, Category="Binora|Pawns", DisplayName="Emitters")
 			TArray<ASoundPawn*> Emitters;
 
 			// The Specific SoundPawns.
-			UPROPERTY(BlueprintReadOnly, DisplayName="Specifics")
+			UPROPERTY(BlueprintReadOnly, Category="Binora|Pawns", DisplayName="Specifics")
 			TArray<ASoundPawn*> Specs;
 
 			// Spawns a SoundPawn and sets its SoundActorType and FMODEvent.
