@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{0c0b9073-06c1-4116-b895-027f05599048}">
+		<property name="volume">
+			<value>3</value>
+		</property>
 		<property name="name">
 			<value>VO</value>
 		</property>
@@ -18,9 +21,21 @@
 		<relationship name="effects">
 			<destination>{2620e553-7b2b-4e2f-bd0c-d151ed8b5c83}</destination>
 			<destination>{d9354c2c-0f6a-4a93-a3f9-fa9ccafa177b}</destination>
+			<destination>{2aa913f0-ac43-4836-a78a-764fe8a5bb07}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d1a6cfe9-4f22-4cb1-9878-34ba4e4bb31f}" />
 	<object class="MixerBusFader" id="{2620e553-7b2b-4e2f-bd0c-d151ed8b5c83}" />
 	<object class="Sidechain" id="{d9354c2c-0f6a-4a93-a3f9-fa9ccafa177b}" />
+	<object class="CompressorEffect" id="{2aa913f0-ac43-4836-a78a-764fe8a5bb07}">
+		<property name="threshold">
+			<value>-33</value>
+		</property>
+		<property name="ratio">
+			<value>1.95000005</value>
+		</property>
+		<property name="gain">
+			<value>4</value>
+		</property>
+	</object>
 </objects>
