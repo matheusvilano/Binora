@@ -51,12 +51,20 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 		public:
 
 			// Enable input on all SoundPawns.
-			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns", DisplayName="Enable All Sound Pawns")
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns|Movement", DisplayName="Enable All Sound Pawns")
 			void EnableAllSoundPawns();
 
 			// Disable input on all SoundPawns.
-			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns", DisplayName="Disable All Sound Pawns")
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns|Movement", DisplayName="Disable All Sound Pawns")
 			void DisableAllSoundPawns();
+
+			// Play sound on all SoundPawns.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns|Sound", DisplayName="Play All Sound Pawns")
+			void PlayAllSoundPawns();
+
+			// Stop sound on all SoundPawns.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns|Sound", DisplayName="Stop All Sound Pawns")
+			void StopAllSoundPawns();
 
 			// Get the SoundActors.
 			UFUNCTION(BlueprintPure)
