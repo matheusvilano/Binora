@@ -7,6 +7,12 @@
 
 #pragma region State
 
+    // Gets the current level state.
+    EBinoraLevelState ABinoraGameState::GetLevelState() const
+    {
+        return this->LevelState;
+    }
+
     // Sets the new level state.
     void ABinoraGameState::SetLevelState(EBinoraLevelState NewLevelState)
     { 
