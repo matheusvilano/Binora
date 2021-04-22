@@ -6,6 +6,7 @@
 #include "BinoraGameMode.h"
 #include "BinoraGameState.h"
 #include "BinoraLevelState.h"
+#include "BinoraPlayerController.h"
 #include "FMODEvent.h"
 #include "FMODBlueprintStatics.h"
 #include "Kismet/GameplayStatics.h"
@@ -63,6 +64,9 @@
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
             {
+                // Stop all SoundPawns.
+                Cast<ABinoraPlayerController>(UGameplayStatics::GetPlayerController(this->AActor::GetWorld(), 0))->StopAllSoundPawns();
+
                 // Make sure the FMODAudioComponent has the GameOver event, then play it.
                 this->FMODAudioComponent->SetEvent(this->FMODEventGameOver); // Not necessary, but good to have.
                 this->FMODAudioComponent->Play();
