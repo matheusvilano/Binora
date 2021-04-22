@@ -4,6 +4,7 @@
 
 #include "BinoraHUD.h"
 #include "BinoraGameMode.h"
+#include "BinoraGameState.h"
 #include "BinoraLevelState.h"
 #include "FMODEvent.h"
 #include "FMODBlueprintStatics.h"
@@ -55,7 +56,7 @@
     // The GameOver event's default implementation.
     void ABinoraLevel::GameOver()
     {
-        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState())->GetLevelState();
+        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
 
         switch (CurrentLevelState)
         {
@@ -69,7 +70,7 @@
             }
             default:
             {
-                UE_LOG(LogTemp, ELogVerbosity::Log, TEXT("Confirm only works during Recreation or Audition"));
+                // Will add a Warning message here later.
                 break;
             }
         }

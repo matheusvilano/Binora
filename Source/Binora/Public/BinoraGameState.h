@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 
 #include "BinoraLevelState.h"
-#include "FMODBus.h"
 #include "GameFramework/GameStateBase.h"
 
 #include "BinoraGameState.generated.h"
@@ -23,14 +22,18 @@ class BINORA_API ABinoraGameState : public AGameStateBase
 		protected:
 
 			// The current Level State: Narration, Memorization, Replication, Audition, or Evaluation.
-			UPROPERTY(BlueprintReadOnly, Category="Binora|State", DisplayName="Level State")
+			UPROPERTY(BlueprintReadOnly, BlueprintGetter=GetLevelState, Category="Binora|State", DisplayName="Level State")
 			EBinoraLevelState LevelState = EBinoraLevelState::BLS_Narration;
 
 		public:
 
-			// The current Level State: Narration, Memorization, Replication, Audition, or Evaluation.
-			UFUNCTION(BlueprintCallable, Category="Binora|State", DisplayName="Set Level State")
+			// Set the current Level State: Narration, Memorization, Replication, Audition, or Evaluation.
+			UFUNCTION()
 			void SetLevelState(EBinoraLevelState NewLevelState);
+
+			// Get the current Level State: Narration, Memorization, Replication, Audition, or Evaluation.
+			UFUNCTION(BlueprintCallable, BlueprintPure, Category="Binora|State", DisplayName="Get Level State")
+			EBinoraLevelState GetLevelState() const;
 
 	#pragma endregion
 

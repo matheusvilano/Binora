@@ -62,6 +62,20 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 			UFUNCTION(BlueprintPure)
 			TArray<ASoundActor*> GetSoundActors();			
 	
+		public:
+
+			// Enable input on all SoundPawns.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns", DisplayName="Enable All Sound Pawns")
+			void EnableAllSoundPawns();
+
+			// Disable input on all SoundPawns.
+			UFUNCTION(BlueprintImplementableEvent, Category="Binora|Pawns", DisplayName="Disable All Sound Pawns")
+			void DisableAllSoundPawns();
+
+			// Get the SoundActors.
+			UFUNCTION(BlueprintPure)
+			TArray<ASoundActor*> GetSoundActors();	
+
 		protected:
 
 			// All SoundActors. Array to be used when creating SoundPawns.

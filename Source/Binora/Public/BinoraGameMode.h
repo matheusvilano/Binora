@@ -75,7 +75,7 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 		protected:
 
 		    // Handle to be used by the Time Manager
-        	UPROPERTY();
+        	UPROPERTY()
 			FTimerHandle MemorizationTimerHandle;
 
 			// This should run every second.

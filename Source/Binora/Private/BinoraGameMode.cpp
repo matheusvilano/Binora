@@ -115,7 +115,7 @@
 
             // Update Level State to Replication
             this->GetGameState<ABinoraGameState>()->SetLevelState(EBinoraLevelState::BLS_Replication);
-
+        
             // Blueprint event (has native implementation too).
             this->GetGameState<ABinoraGameState>()->TimerReachedZero();
         }

@@ -27,19 +27,18 @@
         this->SoundPawnClass = UGameplayStatics::GetGameMode(this->AActor::GetWorld())->GetDefaultPawnClassForController(this);
 
         // Get and set SoundActor references
-        #pragma region SoundActors
+        #pragma region Actors
+        {
             // Find SoundActors and add them to the SoundActors array (Cast first).
-            {
-                // Find SoundActors.
-                TArray<AActor*> FoundActors; // Will temporarily store the actors found.
-                UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASoundActor::StaticClass(), FoundActors);
+            TArray<AActor*> FoundActors; // Will temporarily store the actors found.
+            UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASoundActor::StaticClass(), FoundActors);
 
-                // Cast and add to array.
-                for (AActor* FoundActor : FoundActors)
-                {
-                    this->SoundActors.Add(Cast<ASoundActor>(FoundActor));
-                }
+            // Cast and add to array.
+            for (AActor* FoundActor : FoundActors)
+            {
+                this->SoundActors.Add(Cast<ASoundActor>(FoundActor));
             }
+        }
         #pragma endregion
 
         // Spawn SoundPawns
