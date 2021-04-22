@@ -4,6 +4,8 @@
 
 #include "BinoraHUD.h"
 #include "BinoraGameMode.h"
+#include "BinoraGameState.h"
+#include "BinoraLevelState.h"
 #include "FMODEvent.h"
 #include "FMODBlueprintStatics.h"
 #include "Kismet/GameplayStatics.h"
@@ -43,6 +45,8 @@
         // Play the VO (BeginPlay).
         this->FMODAudioComponent->Play();
 
+        // Bind the Confirm action to the GameOver function.
+        this->AActor::InputComponent->BindAction("Confirm", EInputEvent::IE_Pressed, this, &ABinoraLevel::GameOver);
     }
 
 #pragma endregion
@@ -50,11 +54,26 @@
 #pragma region State
 
     // The GameOver event's default implementation.
-    void ABinoraLevel::GameOver_Implementation()
+    void ABinoraLevel::GameOver()
     {
-        // Make sure the FMODAudioComponent has the GameOver event, then play it.
-        this->FMODAudioComponent->SetEvent(this->FMODEventGameOver); // Not necessary, but good to have.
-        this->FMODAudioComponent->Play();
+        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
+
+        switch (CurrentLevelState)
+        {
+            case EBinoraLevelState::BLS_Replication:
+            case EBinoraLevelState::BLS_Audition:
+            {
+                // Make sure the FMODAudioComponent has the GameOver event, then play it.
+                this->FMODAudioComponent->SetEvent(this->FMODEventGameOver); // Not necessary, but good to have.
+                this->FMODAudioComponent->Play();
+                break;
+            }
+            default:
+            {
+                // Will add a Warning message here later.
+                break;
+            }
+        }
     }
 
 #pragma endregion
@@ -72,7 +91,10 @@
             // Update the FMODAudioComponent with the GameOver event.
             this->FMODAudioComponent->SetEvent(this->FMODEventGameOver);
 
-            // Automatically load the Main Menu oncea the game is over.
+            // Make sure no sound is still playing (VO lines are overlapping if the game stops while a line is already happening).
+            this->FMODAudioComponent->Stop();
+
+            // Automatically load the Main Menu once the game is over.
             this->FMODAudioComponent->OnEventStopped.AddDynamic(this, &ABinoraLevel::OnFMODEventGameOverStopped);
         }
 
