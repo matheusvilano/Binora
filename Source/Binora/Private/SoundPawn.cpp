@@ -76,14 +76,22 @@
 
 #pragma region Possession
 
+	// Runs every time the pawn gets possessed.
 	void ASoundPawn::PossessedBy(AController * NewController)
 	{
-		this->FMODAudioComponent->Play();
+		if (this->InputEnabled())
+		{
+			this->FMODAudioComponent->Play();
+		}
 	}
 
+	// Runs every time the player gets unposssessed.
 	void ASoundPawn::UnPossessed()
 	{
-		this->FMODAudioComponent->Stop();
+		if (this->InputEnabled())
+		{
+			this->FMODAudioComponent->Stop();
+		}
 	}
 
 #pragma endregion

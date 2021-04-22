@@ -88,3 +88,13 @@
 	}
 
 #pragma endregion
+
+#pragma region Sound
+
+	// Get the FMOD Audio Component.
+	UFMODAudioComponent* ASoundActor::GetFMODAudioComponent()
+	{
+		return this->FMODAudioComponent;
+	}
+
+#pragma endregion
