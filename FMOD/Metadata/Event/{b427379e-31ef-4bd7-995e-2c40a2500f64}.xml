@@ -70,6 +70,9 @@
 		<relationship name="modules">
 			<destination>{9181b8ba-3c36-4f40-ba42-734e7d06b6d4}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{a0a3ba14-6b90-48d6-95c0-6f263d2fcf89}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{a111642c-5bf0-47db-918a-dcb430955985}">
 		<relationship name="effectChain">
@@ -97,9 +100,15 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{7af57401-0d1a-4cdd-b2c8-1f8dc0ed801b}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{a4ea72e9-9c28-4f0f-8633-d7b49a9b4382}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{ba2f54d3-e541-4644-9d9c-023e853665e2}</destination>
 		</relationship>
@@ -110,6 +119,20 @@
 			<destination>{a111642c-5bf0-47db-918a-dcb430955985}</destination>
 		</relationship>
 	</object>
+	<object class="LoopRegion" id="{a0a3ba14-6b90-48d6-95c0-6f263d2fcf89}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>26.512291666666666</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{5cdfc248-8787-4c86-82a6-ae04c04f9f6c}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{8fa6d1ab-0f1a-4b4d-b1e1-7e9942b03030}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{294a3097-6821-41ff-b065-90b4c30f899a}">
 		<relationship name="effects">
 			<destination>{964d4b58-f808-47a7-93f0-5c8cf418cb31}</destination>
@@ -118,6 +141,23 @@
 	</object>
 	<object class="MixerBusPanner" id="{9d1051dd-e3de-4a60-bb37-615a959fa430}" />
 	<object class="MixerBusFader" id="{e865044e-a211-4e4c-a836-d463ffed807d}" />
+	<object class="LFOModulator" id="{a4ea72e9-9c28-4f0f-8633-d7b49a9b4382}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
+		<property name="rate">
+			<value>0.419999987</value>
+		</property>
+		<property name="depth">
+			<value>4.5</value>
+		</property>
+		<property name="direction">
+			<value>-100</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{ba2f54d3-e541-4644-9d9c-023e853665e2}">
 		<relationship name="effects">
 			<destination>{4d3738b0-fa3c-4d5e-8752-821fc0c4be0a}</destination>
