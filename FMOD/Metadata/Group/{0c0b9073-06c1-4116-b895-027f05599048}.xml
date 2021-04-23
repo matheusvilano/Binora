@@ -7,6 +7,9 @@
 		<property name="name">
 			<value>VO</value>
 		</property>
+		<property name="maxInstances">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{ed2bc024-0e42-4f16-9247-f55007782295}</destination>
 		</relationship>
