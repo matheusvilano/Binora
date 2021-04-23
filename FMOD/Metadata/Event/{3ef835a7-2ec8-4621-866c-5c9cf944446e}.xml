@@ -356,10 +356,10 @@
 	</object>
 	<object class="LoopRegion" id="{69657838-de50-4064-ae98-83c1d7ecd1f3}">
 		<property name="position">
-			<value>22.000000000000011</value>
+			<value>22</value>
 		</property>
 		<property name="length">
-			<value>5.9999999999999893</value>
+			<value>6</value>
 		</property>
 		<property name="name">
 			<value>Thanks</value>
@@ -459,7 +459,7 @@
 			<value>5</value>
 		</property>
 		<property name="length">
-			<value>1</value>
+			<value>0.5</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{94aa4085-a182-4145-8335-3a3c3a47fbbe}</destination>
@@ -479,7 +479,7 @@
 			<value>10.000000000000002</value>
 		</property>
 		<property name="length">
-			<value>1</value>
+			<value>0.49999999999999822</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{94aa4085-a182-4145-8335-3a3c3a47fbbe}</destination>
@@ -499,7 +499,7 @@
 			<value>15.011833333333337</value>
 		</property>
 		<property name="length">
-			<value>1</value>
+			<value>0.48816666666666464</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{94aa4085-a182-4145-8335-3a3c3a47fbbe}</destination>
@@ -516,7 +516,7 @@
 			<value>21.000000000000004</value>
 		</property>
 		<property name="length">
-			<value>1</value>
+			<value>0.49999999999999645</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{94aa4085-a182-4145-8335-3a3c3a47fbbe}</destination>
