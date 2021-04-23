@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{62d72b80-5ab6-4dfb-b8bf-07295e96b652}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{1f984036-bb1f-4d42-99e2-61d417f97448}</destination>
 		</relationship>
@@ -97,6 +100,9 @@
 		</property>
 		<property name="length">
 			<value>59.280291666666663</value>
+		</property>
+		<property name="volume">
+			<value>10</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -142,7 +148,17 @@
 			<destination>{49892d2f-ede8-459c-9bfa-8c2a456b1389}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{d956a604-bf94-42db-9f6e-5ae5a4300a74}" />
+	<object class="MixerBusPanner" id="{d956a604-bf94-42db-9f6e-5ae5a4300a74}">
+		<property name="surroundPanExtent">
+			<value>0</value>
+		</property>
+		<property name="surroundLFELevel">
+			<value>-80</value>
+		</property>
+		<property name="disabledSpeakers">
+			<value>51</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{0330127b-8013-47b4-ac10-c0e10f098bb3}" />
 	<object class="MixerBusEffectChain" id="{3d837afd-9581-4714-89c2-e386786fb327}">
 		<relationship name="effects">
