@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{88335957-e57c-4fb3-a8e1-7b2a01696d32}">
+		<property name="assetPath">
+			<value>Cabin/Specs/SP_Woodpecker01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.6988124999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b68ee951-2152-4eaf-bd21-6b5c314b6c31}</destination>
+		</relationship>
+	</object>
+</objects>

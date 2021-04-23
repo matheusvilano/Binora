@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{c85fcb80-5efc-4fed-8269-7e635866da4c}">
 		<property name="name">
-			<value>SP_1</value>
+			<value>SP_Birds</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -98,7 +98,6 @@
 		<property name="length">
 			<value>13.5</value>
 		</property>
-		<property name="name" />
 		<relationship name="event">
 			<destination>{c2213e0e-4720-4fe3-a997-97587f94d82d}</destination>
 		</relationship>

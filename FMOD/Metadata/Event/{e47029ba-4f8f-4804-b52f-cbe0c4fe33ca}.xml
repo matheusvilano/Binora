@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{e47029ba-4f8f-4804-b52f-cbe0c4fe33ca}">
 		<property name="name">
-			<value>SP_4</value>
+			<value>SP_Woodpecker</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
