@@ -79,6 +79,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6d5abd79-3003-4f76-9989-1837f81ca0c9}">
+		<property name="volume">
+			<value>-20.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{61a211b3-67de-4ebc-b23b-c982d64c36a5}</destination>
 		</relationship>
@@ -150,6 +153,7 @@
 		<relationship name="effects">
 			<destination>{4b3c2e78-4bb4-418c-a1bb-c8132bf09d0c}</destination>
 			<destination>{23305bbb-bb6f-4b8d-aadb-a1cbaa2bbf9c}</destination>
+			<destination>{6630a937-e9e6-4917-a37f-d22725ebc894}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{410bcdb5-f319-43f5-9d89-d230ad1844bb}" />
@@ -183,6 +187,17 @@
 		<property name="maximumDistance">
 			<value>7</value>
 		</property>
+	</object>
+	<object class="MixerSend" id="{6630a937-e9e6-4917-a37f-d22725ebc894}">
+		<property name="level">
+			<value>3</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{2e44dfe8-c2ae-4061-a157-45da03e730ce}</destination>
+		</relationship>
 	</object>
 	<object class="SingleSound" id="{ec27f534-03b0-4537-b8bf-ea2a7e1f0071}">
 		<property name="volume">

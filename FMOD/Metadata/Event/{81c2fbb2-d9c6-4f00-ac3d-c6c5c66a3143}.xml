@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{81c2fbb2-d9c6-4f00-ac3d-c6c5c66a3143}">
-		<property name="color">
-			<value>Cyan Light 1</value>
-		</property>
 		<property name="name">
 			<value>BG_Wind</value>
 		</property>
@@ -99,7 +96,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{81a268ec-5e50-403e-9e66-9af826ddecd5}">
 		<property name="volume">
-			<value>1.5</value>
+			<value>4</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{d1d9ed0d-ae17-4688-a006-4e3173639b25}</destination>
@@ -133,7 +130,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{885767a9-d35a-44a8-b6d1-33ee787dde4d}">
 		<property name="volume">
-			<value>-7</value>
+			<value>-6</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -167,7 +164,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{f09858fa-1e4c-4271-9e07-8614cfe04bb2}">
 		<property name="volume">
-			<value>-13.5</value>
+			<value>-30</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>
@@ -201,7 +198,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{e5cfa07e-2f78-4ad0-85c6-46610f1a7b46}">
 		<property name="volume">
-			<value>5</value>
+			<value>-16.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 3</value>
@@ -234,6 +231,7 @@
 		<relationship name="effects">
 			<destination>{99552f6a-3b9c-45e9-90ee-d9948d9c1f80}</destination>
 			<destination>{686d0862-4be5-4853-a762-ebd1c1732e1b}</destination>
+			<destination>{aaf44ce5-8ee9-491d-af97-dd35f05c5755}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ee22f813-e7ad-4a1e-907b-2f32fadfbddb}" />
@@ -255,6 +253,7 @@
 	<object class="MixerBusEffectChain" id="{2f2f3ae8-8a7a-4a1a-9a2b-f540b736b104}">
 		<relationship name="effects">
 			<destination>{bb9358dd-fc4c-4008-9298-13f9f57864ad}</destination>
+			<destination>{ddc1908c-3b50-4154-8c90-a6a1f720060f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{41a2a9ac-78af-4c42-97ad-7f997ae68322}" />
@@ -296,7 +295,26 @@
 			<value>2</value>
 		</property>
 	</object>
+	<object class="MixerSend" id="{aaf44ce5-8ee9-491d-af97-dd35f05c5755}">
+		<property name="level">
+			<value>-10</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{2e44dfe8-c2ae-4061-a157-45da03e730ce}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{bb9358dd-fc4c-4008-9298-13f9f57864ad}" />
+	<object class="ThreeEQEffect" id="{ddc1908c-3b50-4154-8c90-a6a1f720060f}">
+		<property name="lowGain">
+			<value>-46</value>
+		</property>
+		<property name="midGain">
+			<value>-32</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{c1c9213d-e62d-4b14-b02f-959f06171365}" />
 	<object class="MixerBusFader" id="{6bd4f8c3-13ca-4417-a4ca-392b22563422}" />
 </objects>

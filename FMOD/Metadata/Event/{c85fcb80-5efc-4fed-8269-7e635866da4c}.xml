@@ -58,7 +58,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{9805583d-d1c8-46af-bf4e-301f3b6b26c5}">
 		<property name="maxVoices">
-			<value>2</value>
+			<value>1</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>960</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{54db0651-14cf-4082-977c-d4e583ec170d}" />
@@ -80,7 +83,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{58f8d652-3a05-41e8-a2f4-8e6eb0039a0e}">
 		<property name="volume">
-			<value>5</value>
+			<value>-13</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{05605d52-6385-4773-a83c-b0601d0c987a}</destination>
@@ -106,10 +109,10 @@
 			<value>28</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>5000</value>
+			<value>7500</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>9000</value>
+			<value>16000</value>
 		</property>
 		<property name="minimumScatterDistance">
 			<value>0</value>
@@ -156,6 +159,7 @@
 		<relationship name="effects">
 			<destination>{9acc9a34-1059-4db5-b971-00b732aa8289}</destination>
 			<destination>{8ce87780-5fad-43de-88fe-4679813e3c60}</destination>
+			<destination>{0aec9bec-20d9-499d-90d8-3a84dd88057d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1ee1e33e-9cd2-49ed-9d84-b72bc1425c08}" />
@@ -185,6 +189,17 @@
 		<property name="maximumDistance">
 			<value>10</value>
 		</property>
+	</object>
+	<object class="MixerSend" id="{0aec9bec-20d9-499d-90d8-3a84dd88057d}">
+		<property name="level">
+			<value>8.5</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{2e44dfe8-c2ae-4061-a157-45da03e730ce}</destination>
+		</relationship>
 	</object>
 	<object class="SingleSound" id="{717d4077-46e5-4913-8cc6-4f6473e778b2}">
 		<relationship name="audioFile">
