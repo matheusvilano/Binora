@@ -53,14 +53,6 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (GameOver)")
 			UFMODEvent* FMODEventGameOver = nullptr;
 
-			// Callback for FMODEventBeginPlay.
-			UFUNCTION()
-			void OnFMODEventBeginPlayStopped();
-
-			// Callback for FMODEventGameOver.
-			UFUNCTION()
-			void OnFMODEventGameOverStopped();
-
 			// Blueprint event that gets called once the timer starts.
 			UFUNCTION(BlueprintImplementableEvent, Category="Binora|State", DisplayName="Level Started")
 			void LevelStarted();
@@ -74,6 +66,14 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 	#pragma region State
 
 		protected:
+
+			// Callback for FMODEventBeginPlay.
+			UFUNCTION()
+			void OnNarrationFinished();
+
+			// Loads the MainMenu MAP and invokes the LevelEnded event. Callback for FMODEventGameOver.
+			UFUNCTION()
+			void ReturnToMainMenu();
 
 			// The GameOver event.
 			UFUNCTION(BlueprintCallable, Category="Binora|State", DisplayName="Game Over")

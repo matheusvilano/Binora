@@ -41,13 +41,15 @@
         this->FMODAudioComponent->SetEvent(this->FMODEventBeginPlay);
 
         // Automatically handle the Timer once the VO (BeginPlay) is done.
-        this->FMODAudioComponent->OnEventStopped.AddDynamic(this, &ABinoraLevel::OnFMODEventBeginPlayStopped);
+        this->FMODAudioComponent->OnEventStopped.AddDynamic(this, &ABinoraLevel::OnNarrationFinished);
 
         // Play the VO (BeginPlay).
         this->FMODAudioComponent->Play();
 
         // Bind the Confirm action to the GameOver function.
         this->AActor::InputComponent->BindAction("Confirm", EInputEvent::IE_Pressed, this, &ABinoraLevel::GameOver);
+
+        // Bind the Return action to the ReturnToMainMenuFunction.
 
         // Bind the Audit action to the AuditPawns function.
         this->AActor::InputComponent->BindAction("Audit", EInputEvent::IE_Pressed, this, &ABinoraLevel::StartAudition);
@@ -145,10 +147,10 @@
 
 #pragma endregion
 
-#pragma region Sound
+#pragma region Callbacks
 
     // Callback for FMODEventBeginPlay.
-	void ABinoraLevel::OnFMODEventBeginPlayStopped()
+	void ABinoraLevel::OnNarrationFinished()
     {
         // New audio settings (change VO from BeginPlay to GameOver)
         {
@@ -162,7 +164,7 @@
             this->FMODAudioComponent->Stop();
 
             // Automatically load the Main Menu once the game is over.
-            this->FMODAudioComponent->OnEventStopped.AddDynamic(this, &ABinoraLevel::OnFMODEventGameOverStopped);
+            this->FMODAudioComponent->OnEventStopped.AddDynamic(this, &ABinoraLevel::ReturnToMainMenu);
         }
 
         // Start the Memorization Timer.
@@ -175,8 +177,8 @@
         this->LevelStarted();
     }
 
-    // Callback for FMODEventGameOver.
-    void ABinoraLevel::OnFMODEventGameOverStopped()
+    // Loads the MainMenu MAP and invokes the LevelEnded event. Callback for FMODEventGameOver.
+    void ABinoraLevel::ReturnToMainMenu()
     {
         // Load the main menu
         UGameplayStatics::OpenLevel(this->AActor::GetWorld(), BINORA_MAP_MAINMENU);
