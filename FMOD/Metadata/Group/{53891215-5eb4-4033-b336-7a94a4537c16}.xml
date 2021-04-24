@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>LVL</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{f81057d2-4a4d-4b62-8973-ed5057d77710}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{1e99695d-6810-4f43-a0a3-f6dd79514544}</destination>
 		</relationship>
@@ -14,23 +17,28 @@
 			<destination>{a8173c4e-a638-49ee-a0b1-79fd9e411b4a}</destination>
 		</relationship>
 	</object>
+	<object class="ADSRModulator" id="{f81057d2-4a4d-4b62-8973-ed5057d77710}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>500</value>
+		</property>
+		<property name="releaseTime">
+			<value>620</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{1e99695d-6810-4f43-a0a3-f6dd79514544}">
 		<relationship name="effects">
 			<destination>{528ff972-8193-48d4-b394-f34c1b59ece1}</destination>
-			<destination>{d5b78fd6-f226-4314-9a5b-a21f319c0d2c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{368b441f-8721-4c1d-b65d-c8013cd46185}" />
 	<object class="MixerBusFader" id="{528ff972-8193-48d4-b394-f34c1b59ece1}" />
-	<object class="CompressorEffect" id="{d5b78fd6-f226-4314-9a5b-a21f319c0d2c}">
-		<property name="threshold">
-			<value>-40</value>
-		</property>
-		<property name="ratio">
-			<value>40</value>
-		</property>
-		<property name="releaseTime">
-			<value>1000</value>
-		</property>
-	</object>
 </objects>
