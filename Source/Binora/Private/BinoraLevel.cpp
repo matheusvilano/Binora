@@ -48,17 +48,80 @@
 
         // Bind the Confirm action to the GameOver function.
         this->AActor::InputComponent->BindAction("Confirm", EInputEvent::IE_Pressed, this, &ABinoraLevel::GameOver);
+
+        // Bind the Audit action to the AuditPawns function.
+        this->AActor::InputComponent->BindAction("Audit", EInputEvent::IE_Pressed, this, &ABinoraLevel::StartAudition);
+        this->AActor::InputComponent->BindAction("Audit", EInputEvent::IE_Released, this, &ABinoraLevel::StopAudition);
     }
 
 #pragma endregion
 
 #pragma region State
 
+    // The StartAudition event.
+    void ABinoraLevel::StartAudition_Implementation()
+    {
+        // Get current Level State from BinoraGameState.
+        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
+
+        // Update Level State.
+        switch (CurrentLevelState)
+        {
+            case EBinoraLevelState::BLS_Replication:
+            case EBinoraLevelState::BLS_Audition:
+            {
+                // Get Player Controller
+                ABinoraPlayerController* BinoraPlayerController = Cast<ABinoraPlayerController>(UGameplayStatics::GetPlayerController(this->AActor::GetWorld(), 0));
+
+                // Stop all SoundPawns.
+                BinoraPlayerController->PlayAllSoundPawns();
+
+                break;
+            }
+            default:
+            {
+                // Will add a Warning message here later.
+                break;
+            }
+        }
+    }
+
+    // The StopAudition event.
+    void ABinoraLevel::StopAudition_Implementation()
+    {
+        // Get current state from BinoraGameState.
+        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
+
+        // Update Level State.
+        switch (CurrentLevelState)
+        {
+            case EBinoraLevelState::BLS_Replication:
+            case EBinoraLevelState::BLS_Audition:
+            {
+                // Get Player Controller
+                ABinoraPlayerController* BinoraPlayerController = Cast<ABinoraPlayerController>(UGameplayStatics::GetPlayerController(this->AActor::GetWorld(), 0));
+
+                // Stop all SoundPawns.
+                BinoraPlayerController->StopAllSoundPawns();
+
+                // Play all SoundActors.
+                break;
+            }
+            default:
+            {
+                // Will add a Warning message here later.
+                break;
+            }
+        }
+    }
+
     // The GameOver event's default implementation.
     void ABinoraLevel::GameOver()
     {
+        // Get current state from BinoraGameState.
         EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
 
+        // Update Level State.
         switch (CurrentLevelState)
         {
             case EBinoraLevelState::BLS_Replication:

@@ -79,5 +79,13 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			UFUNCTION(BlueprintCallable, Category="Binora|State", DisplayName="Game Over")
 			void GameOver();
 
+			// The StartAudition event.
+			UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Binora|State", DisplayName="Start Audition")
+			void StartAudition();
+
+			// The StopAudition event.
+			UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Binora|State", DisplayName="Stop Audition")
+			void StopAudition();
+
 	#pragma endregion
 };
