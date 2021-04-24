@@ -102,6 +102,9 @@
 		<property name="length">
 			<value>5.5</value>
 		</property>
+		<property name="volume">
+			<value>1.5</value>
+		</property>
 		<property name="minimumTimeBetweenSounds">
 			<value>7000</value>
 		</property>
@@ -117,7 +120,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d63ed8d4-f7f4-4081-8a40-32bd6d005135}">
 		<property name="volume">
-			<value>-2.5</value>
+			<value>9.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
