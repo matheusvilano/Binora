@@ -52,10 +52,24 @@
 	// Construction script
 	void ASoundActor::OnConstruction(const FTransform& Transform)
 	{
-		// Force Z axis to 0 and NO rotation
+		// Force Z axis to 0 and NO rotation.
 		{
+			// Get Actor Location, but set Z to 0.
 			FVector Location = this->AActor::GetActorLocation();
-			this->AActor::SetActorLocation(FVector(Location.X, 0.0f, 0.0f));
+			Location.Z = 0.0f;
+
+			// If the SoundActor is a Background, force NO panning.
+			switch (this->SoundType)
+			{
+				case ESoundActorType::ST_Background1:
+				case ESoundActorType::ST_Background2:
+				{
+					Location.Y = 0;
+				}
+			}
+
+			// Updated Location and Rotation.
+			this->AActor::SetActorLocation(Location);
 			this->AActor::SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));
 		}
 
