@@ -55,7 +55,7 @@
 		// Force Z axis to 0 and NO rotation
 		{
 			FVector Location = this->AActor::GetActorLocation();
-			this->AActor::SetActorLocation(FVector(Location.X, Location.Y, 0.0f));
+			this->AActor::SetActorLocation(FVector(Location.X, 0.0f, 0.0f));
 			this->AActor::SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));
 		}
 
