@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerReturn" id="{2e44dfe8-c2ae-4061-a157-45da03e730ce}">
+		<property name="name">
+			<value>RV_Cabin</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{e8746302-d0a0-4882-b6d2-33627f1637eb}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{4a6389f9-594e-443f-9ef7-2ba0a1b97367}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{e2a4f21f-bdee-4134-ab67-d236345387ad}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{e8746302-d0a0-4882-b6d2-33627f1637eb}">
+		<relationship name="effects">
+			<destination>{0bff4bb3-38fb-4a03-8de3-fe36d82416e9}</destination>
+			<destination>{eb6bb282-5d6e-43b7-988b-ccead449f115}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{4a6389f9-594e-443f-9ef7-2ba0a1b97367}" />
+	<object class="MixerBusFader" id="{0bff4bb3-38fb-4a03-8de3-fe36d82416e9}" />
+	<object class="SFXReverbEffect" id="{eb6bb282-5d6e-43b7-988b-ccead449f115}">
+		<property name="decayTime">
+			<value>700</value>
+		</property>
+	</object>
+</objects>

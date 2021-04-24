@@ -140,10 +140,12 @@
 		<relationship name="effects">
 			<destination>{964d4b58-f808-47a7-93f0-5c8cf418cb31}</destination>
 			<destination>{7b981e32-e4cf-4e91-9d5b-7cc28bbd6d71}</destination>
-			<destination>{a52fbd84-7136-41ec-b22a-b849d878f7e0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9d1051dd-e3de-4a60-bb37-615a959fa430}">
+		<property name="surroundPanExtent">
+			<value>114</value>
+		</property>
 		<property name="surroundLFELevel">
 			<value>-80</value>
 		</property>
@@ -177,34 +179,8 @@
 	<object class="MixerBusPanner" id="{40ab460e-877b-4f44-a8bc-40ef0b7d0ddf}" />
 	<object class="MixerBusFader" id="{964d4b58-f808-47a7-93f0-5c8cf418cb31}" />
 	<object class="SpatialiserEffect" id="{7b981e32-e4cf-4e91-9d5b-7cc28bbd6d71}">
-		<property name="minimumDistance">
-			<value>0</value>
-		</property>
 		<property name="maximumDistance">
 			<value>10</value>
-		</property>
-	</object>
-	<object class="SFXReverbEffect" id="{a52fbd84-7136-41ec-b22a-b849d878f7e0}">
-		<property name="decayTime">
-			<value>2000</value>
-		</property>
-		<property name="HFReference">
-			<value>9000</value>
-		</property>
-		<property name="lowShelfFrequency">
-			<value>66</value>
-		</property>
-		<property name="lowShelfGain">
-			<value>-31.5</value>
-		</property>
-		<property name="highCut">
-			<value>5200</value>
-		</property>
-		<property name="wetLevel">
-			<value>3</value>
-		</property>
-		<property name="dryLevel">
-			<value>2</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{4d3738b0-fa3c-4d5e-8752-821fc0c4be0a}" />

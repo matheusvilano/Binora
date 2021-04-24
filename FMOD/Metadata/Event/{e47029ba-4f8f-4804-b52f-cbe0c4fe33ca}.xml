@@ -153,7 +153,7 @@
 		<relationship name="effects">
 			<destination>{81d2b6df-e18a-4bb1-8b08-fa0f7fa70a6e}</destination>
 			<destination>{38171659-b85c-4fb5-9ec5-bdddbe467fd4}</destination>
-			<destination>{ee06ff37-d20b-48a0-b979-2be0722aee5d}</destination>
+			<destination>{124fd048-c007-4c37-a78e-07d20ebef12a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3f5a2fde-8732-4b53-ba9d-802c5e131be3}">
@@ -185,29 +185,17 @@
 	<object class="MixerBusPanner" id="{18980345-b524-48d4-b8bc-84c5f89b11b7}" />
 	<object class="MixerBusFader" id="{81d2b6df-e18a-4bb1-8b08-fa0f7fa70a6e}" />
 	<object class="SpatialiserEffect" id="{38171659-b85c-4fb5-9ec5-bdddbe467fd4}">
-		<property name="bypass">
-			<value>true</value>
-		</property>
-		<property name="minimumDistance">
-			<value>0</value>
-		</property>
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>9</value>
 		</property>
 	</object>
-	<object class="SFXReverbEffect" id="{ee06ff37-d20b-48a0-b979-2be0722aee5d}">
-		<property name="decayTime">
-			<value>3200</value>
+	<object class="MixerSend" id="{124fd048-c007-4c37-a78e-07d20ebef12a}">
+		<property name="inputFormat">
+			<value>2</value>
 		</property>
-		<property name="earlyDelay">
-			<value>17</value>
-		</property>
-		<property name="lateDelay">
-			<value>24.5</value>
-		</property>
-		<property name="wetLevel">
-			<value>-5</value>
-		</property>
+		<relationship name="mixerReturn">
+			<destination>{2e44dfe8-c2ae-4061-a157-45da03e730ce}</destination>
+		</relationship>
 	</object>
 	<object class="SingleSound" id="{4986ede0-db4a-4488-8c53-241d0966efe1}">
 		<relationship name="audioFile">
