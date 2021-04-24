@@ -11,7 +11,7 @@
 	ATutorialSubtitles::ATutorialSubtitles()
 	{
 		// Set this actor NOT to call Tick() every frame. 
-		this->AActor::PrimaryActorTick.bCanEverTick = true;
+		this->AActor::PrimaryActorTick.bCanEverTick = false;
 
 		// Set up FMOD Component
 		this->FMODAudioComponent = this->UObject::CreateDefaultSubobject<UFMODAudioComponent>(TEXT("FMOD Audio Component"));

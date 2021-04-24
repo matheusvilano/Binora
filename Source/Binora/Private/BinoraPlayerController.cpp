@@ -3,6 +3,7 @@
 #include "BinoraPlayerController.h"
 
 #include "Delegates/DelegateInstancesImpl.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/InputDelegateBinding.h"
 #include "GameFramework/GameModeBase.h"
 #include "GameFramework/Pawn.h"
@@ -148,9 +149,12 @@
     // Spawns a SoundPawn and sets its SoundActorType and FMODEvent.
     void ABinoraPlayerController::SpawnSoundPawn(TArray<ASoundPawn*>& SoundPawnArray, ESoundActorType SoundType, UFMODEvent* FMODEvent)
     {
+        FActorSpawnParameters SpawnParameters;
+        SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
         if (!SoundPawnArray[*SoundType]) // only proceed if the pointer is a nullptr
         {
-            SoundPawnArray[*SoundType] = Cast<ASoundPawn>(this->GetWorld()->SpawnActor<AActor>(SoundPawnClass, FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f)));
+            SoundPawnArray[*SoundType] = Cast<ASoundPawn>(this->GetWorld()->SpawnActor<AActor>(SoundPawnClass, FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f), SpawnParameters));
             SoundPawnArray[*SoundType]->SetSoundType(SoundType);
             SoundPawnArray[*SoundType]->GetFMODAudioComponent()->SetEvent(FMODEvent);
             SoundPawnArray[*SoundType]->SetActorLabel(~SoundType); // This renames the Actor (so that it is easy to find it in the World Outliner).
