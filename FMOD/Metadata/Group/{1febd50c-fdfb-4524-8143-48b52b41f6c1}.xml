@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{1febd50c-fdfb-4524-8143-48b52b41f6c1}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<property name="name">
 			<value>MS</value>
+		</property>
+		<property name="maxInstances">
+			<value>1</value>
+		</property>
+		<property name="instanceStealing">
+			<value>3</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{a32bd0fd-2abc-43df-b482-9e6a22c775f2}</destination>
@@ -18,16 +27,17 @@
 		<relationship name="effects">
 			<destination>{90803b6d-db26-4d05-a7f8-7f1dc01c48ac}</destination>
 			<destination>{18181987-314f-4d13-ad7e-90fb972c7b7d}</destination>
+			<destination>{4a6f821f-b78c-474a-9e78-6f4b97a1f7da}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{92364064-6328-4868-afeb-91e36c8d4c8c}" />
 	<object class="MixerBusFader" id="{90803b6d-db26-4d05-a7f8-7f1dc01c48ac}" />
 	<object class="CompressorEffect" id="{18181987-314f-4d13-ad7e-90fb972c7b7d}">
 		<property name="threshold">
-			<value>-16</value>
+			<value>-17.9500008</value>
 		</property>
-		<property name="attackTime">
-			<value>12</value>
+		<property name="ratio">
+			<value>2.96000004</value>
 		</property>
 		<property name="releaseTime">
 			<value>70</value>
@@ -39,9 +49,25 @@
 			<destination>{bec07342-c73e-4a66-a368-732e96bf40f7}</destination>
 		</relationship>
 	</object>
+	<object class="MultibandEqEffect" id="{4a6f821f-b78c-474a-9e78-6f4b97a1f7da}">
+		<property name="frequencyA">
+			<value>15000</value>
+		</property>
+		<property name="qualityA">
+			<value>0.100000001</value>
+		</property>
+		<relationship name="automators">
+			<destination>{0da1f7d0-173e-497b-9538-e4fd1e56c9b1}</destination>
+		</relationship>
+	</object>
 	<object class="RandomizerModulator" id="{cd3f2845-8418-4143-ad90-df73b87f13ec}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>threshold</value>
+		</property>
+	</object>
+	<object class="Automator" id="{0da1f7d0-173e-497b-9538-e4fd1e56c9b1}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>frequencyA</value>
 		</property>
 	</object>
 </objects>

@@ -137,9 +137,6 @@
 		<property name="commandType">
 			<value>3</value>
 		</property>
-		<property name="targetValue">
-			<value>1</value>
-		</property>
 		<relationship name="commandTarget">
 			<destination>{0fa84601-f57a-44bf-a89e-ff9a8c443524}</destination>
 		</relationship>
