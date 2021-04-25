@@ -76,7 +76,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{62d72b80-5ab6-4dfb-b8bf-07295e96b652}">
 		<property name="volume">
-			<value>6.5</value>
+			<value>10</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{1f984036-bb1f-4d42-99e2-61d417f97448}</destination>
@@ -100,6 +100,9 @@
 		</property>
 		<property name="length">
 			<value>59.280291666666663</value>
+		</property>
+		<property name="volume">
+			<value>2.5</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -166,13 +169,16 @@
 	<object class="MixerBusPanner" id="{f10cdfa9-97d5-415d-ae06-12e9e812e040}" />
 	<object class="MixerBusFader" id="{c2b6c0ab-59ae-4419-a495-039e8d9110ae}" />
 	<object class="SpatialiserEffect" id="{49892d2f-ede8-459c-9bfa-8c2a456b1389}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
 		<property name="maximumDistance">
 			<value>7</value>
 		</property>
 	</object>
 	<object class="MixerSend" id="{9b764f0d-46e1-4271-95f9-1d9c0c62dcff}">
 		<property name="level">
-			<value>-15.5</value>
+			<value>-12</value>
 		</property>
 		<property name="inputFormat">
 			<value>2</value>
