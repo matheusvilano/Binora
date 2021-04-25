@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="ParameterPreset" id="{a8372b6c-a688-4b0a-aa2a-a960df0d0952}">
 		<property name="name">
-			<value>HasGameStarted</value>
+			<value>IsMainMenuOnScreen</value>
 		</property>
 		<relationship name="folder">
 			<destination>{be6c535c-f4a0-4d3b-9d1e-366db110f703}</destination>
