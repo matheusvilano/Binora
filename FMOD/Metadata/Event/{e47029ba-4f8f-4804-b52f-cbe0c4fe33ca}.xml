@@ -157,14 +157,8 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3f5a2fde-8732-4b53-ba9d-802c5e131be3}">
-		<property name="surroundPanExtent">
-			<value>0</value>
-		</property>
 		<property name="surroundLFELevel">
 			<value>-80</value>
-		</property>
-		<property name="disabledSpeakers">
-			<value>51</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{9b513c66-59c0-40fd-8d8e-1b4e6cbbabba}" />
