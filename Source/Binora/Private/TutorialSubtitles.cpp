@@ -17,13 +17,19 @@
 		this->FMODAudioComponent = this->UObject::CreateDefaultSubobject<UFMODAudioComponent>(TEXT("FMOD Audio Component"));
 		this->AActor::SetRootComponent(this->FMODAudioComponent);
 
-		// Find FMOD Event (asset); use as default.
-        static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEvent(TEXT("/Game/FMOD/Events/VO/MainMenu/Tutorial/VO_MainMenu_TutorialSection.VO_MainMenu_TutorialSection"));
-		this->FMODAudioComponent->SetEvent(dFMODEvent.Object);
+		// Find FMOD Event (asset); use as default. "_C" and "UClass" (instead of "UFMODEvent") ensures that it will (also) work on a packaged build. NOTE: Only working in the editor, as FMOD references are NOT packaged.
+        // static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEvent(TEXT("/Game/FMOD/Events/VO/MainMenu/Tutorial/VO_MainMenu_TutorialSection"));
+		// this->FMODAudioComponent->SetEvent(dFMODEvent.Object);
 
 		// Set up FMOD Callbacks
 		this->FMODAudioComponent->bEnableTimelineCallbacks = true;
 		this->FMODAudioComponent->OnTimelineMarker.AddDynamic(this, &ATutorialSubtitles::UpdateCurrentLine);
+	}
+
+	// Construction script
+	void ATutorialSubtitles::OnConstruction(const FTransform& Transform)
+	{
+		this->FMODAudioComponent->SetEvent(this->FMODEvent);
 	}
 
 #pragma endregion
