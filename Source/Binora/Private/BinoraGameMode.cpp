@@ -39,20 +39,24 @@
     // Adds a certain number to the score.
     inline void ABinoraGameMode::AddScore(uint8 Addend)
     {
-        this->Score = ((this->Score + Addend) > 100) ? 100 : this->Score + Addend;
+        // Store the CurrentScore in a variable (for readability).
+        uint8 NewScore = this->GetGameState<ABinoraGameState>()->GetScore() + Addend;
+
+        // Set the Score on the GameState (clamp to the value of MaxScore).
+        this->GetGameState<ABinoraGameState>()->SetScore((NewScore > this->MaxScore) ? this->MaxScore : NewScore);
     }
 
     // Returns the score as a percentage.
     inline float ABinoraGameMode::GetScoreAsPercentage() const
     {
-        return 100 * this->Score / this->MaxScore;
+        return 100 * this->GetGameState<ABinoraGameState>()->GetScore() / this->MaxScore;
     }
 
     // Adds a certain number to the score.
     inline void ABinoraGameMode::SetScore(uint8 NewScore)
     {
         // Only set the new score if it is within the 0-100 range.
-        this->Score = (NewScore >= 0 && NewScore <= 100) ? NewScore : this->Score;
+        this->GetGameState<ABinoraGameState>()->SetScore((NewScore >= 0 && NewScore <= 100) ? NewScore : this->GetGameState<ABinoraGameState>()->GetScore());
     }
 
     // Returns the score as a category (Subpar, Good, Great, or Perfect).
@@ -90,7 +94,7 @@
     // Sets the Game Over state (generally to false).
     void ABinoraGameMode::EndGame_Implementation()
     {
-        throw "To be implemented.";
+        
     }
 
     // Starts the memorization timer and sets the state to Memorization.

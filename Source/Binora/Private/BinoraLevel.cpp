@@ -106,7 +106,6 @@
                 // Stop all SoundPawns.
                 BinoraPlayerController->StopAllSoundPawns();
 
-                // Play all SoundActors.
                 break;
             }
             default:
@@ -129,6 +128,9 @@
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
             {
+                // Inform the GameMode that the user has pressed the Confirm button, so the level is ending. The GameMode will calculate the score and define performance.
+                Cast<ABinoraGameMode>(UGameplayStatics::GetGameMode(this->GetWorld()))->EndGame();
+
                 // Stop all SoundPawns.
                 Cast<ABinoraPlayerController>(UGameplayStatics::GetPlayerController(this->AActor::GetWorld(), 0))->StopAllSoundPawns();
 
