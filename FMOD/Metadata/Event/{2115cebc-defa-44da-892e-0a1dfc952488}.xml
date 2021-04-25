@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{2115cebc-defa-44da-892e-0a1dfc952488}">
 		<property name="name">
-			<value>EM_WindHowl</value>
+			<value>House_EM_WindHowl</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -87,6 +87,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{87db33d8-639d-4240-9fcc-8ca297f3e418}">
+		<relationship name="modulators">
+			<destination>{809b91bb-15ac-4e6e-b6a1-e031638a2e8c}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{e0ec1fec-a27b-4885-8b97-35acd8074f32}</destination>
 		</relationship>
@@ -175,6 +178,17 @@
 		<relationship name="markerTrack">
 			<destination>{d3caec2a-7e3f-4d55-8c1d-3511283ecd4e}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{809b91bb-15ac-4e6e-b6a1-e031638a2e8c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{e0ec1fec-a27b-4885-8b97-35acd8074f32}">
 		<relationship name="effects">

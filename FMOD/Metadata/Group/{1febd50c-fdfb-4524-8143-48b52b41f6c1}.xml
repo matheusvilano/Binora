@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{1febd50c-fdfb-4524-8143-48b52b41f6c1}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-4.5</value>
 		</property>
 		<property name="name">
 			<value>MS</value>
@@ -28,6 +28,7 @@
 			<destination>{90803b6d-db26-4d05-a7f8-7f1dc01c48ac}</destination>
 			<destination>{18181987-314f-4d13-ad7e-90fb972c7b7d}</destination>
 			<destination>{4a6f821f-b78c-474a-9e78-6f4b97a1f7da}</destination>
+			<destination>{66b76118-5a81-4538-bf17-56ae4c675084}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{92364064-6328-4868-afeb-91e36c8d4c8c}" />
@@ -60,6 +61,7 @@
 			<destination>{0da1f7d0-173e-497b-9538-e4fd1e56c9b1}</destination>
 		</relationship>
 	</object>
+	<object class="LoudnessMeter" id="{66b76118-5a81-4538-bf17-56ae4c675084}" />
 	<object class="RandomizerModulator" id="{cd3f2845-8418-4143-ad90-df73b87f13ec}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>threshold</value>

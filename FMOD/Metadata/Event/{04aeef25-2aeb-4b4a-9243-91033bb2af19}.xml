@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{04aeef25-2aeb-4b4a-9243-91033bb2af19}">
 		<property name="name">
-			<value>SP_JetSki</value>
+			<value>Beach_SP_JetSki</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -81,6 +81,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9d4ed442-1d15-4ec7-b61a-7cdd9a3466eb}">
+		<relationship name="modulators">
+			<destination>{0cbd36b5-0287-4ba6-9b41-4f0a8956704a}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{f7c2219e-5015-4516-b939-7ae969701b28}</destination>
 		</relationship>
@@ -152,6 +155,17 @@
 		<relationship name="markerTrack">
 			<destination>{d447196b-a9bd-4e52-bcd4-552e89a93265}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{0cbd36b5-0287-4ba6-9b41-4f0a8956704a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{f7c2219e-5015-4516-b939-7ae969701b28}">
 		<relationship name="effects">

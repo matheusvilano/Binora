@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{991b91ba-295a-4beb-acc8-2039de1c939d}">
 		<property name="name">
-			<value>EM_RushingRiver</value>
+			<value>Cabin_EM_RushingRiver</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{a41e2138-ee27-4a69-af15-c486b4e57a4b}">
+		<relationship name="modulators">
+			<destination>{d7abf150-4dcf-4176-bb95-9ce2741f2fff}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{0d872942-c657-4ce3-b6f9-cc94f801a835}</destination>
 		</relationship>
@@ -135,6 +138,17 @@
 		<relationship name="markerTrack">
 			<destination>{240537a2-9f9c-46d8-8753-c1783ca25948}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{d7abf150-4dcf-4176-bb95-9ce2741f2fff}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{0d872942-c657-4ce3-b6f9-cc94f801a835}">
 		<relationship name="effects">

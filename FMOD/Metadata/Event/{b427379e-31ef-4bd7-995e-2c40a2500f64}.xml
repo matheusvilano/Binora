@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{b427379e-31ef-4bd7-995e-2c40a2500f64}">
 		<property name="name">
-			<value>EM_Fireplace</value>
+			<value>Cabin_EM_Fireplace</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -78,6 +78,9 @@
 		<property name="volume">
 			<value>3.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{a8eca0d8-ffbd-447d-8d11-d350686ad7b5}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{294a3097-6821-41ff-b065-90b4c30f899a}</destination>
 		</relationship>
@@ -138,6 +141,17 @@
 		<relationship name="markerTrack">
 			<destination>{8fa6d1ab-0f1a-4b4d-b1e1-7e9942b03030}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{a8eca0d8-ffbd-447d-8d11-d350686ad7b5}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{294a3097-6821-41ff-b065-90b4c30f899a}">
 		<relationship name="effects">

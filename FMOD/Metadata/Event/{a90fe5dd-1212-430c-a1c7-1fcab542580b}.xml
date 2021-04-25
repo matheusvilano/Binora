@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{a90fe5dd-1212-430c-a1c7-1fcab542580b}">
 		<property name="name">
-			<value>BG_WaveyBois</value>
+			<value>Beach_BG_WaveyBois</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -78,6 +78,9 @@
 		<property name="volume">
 			<value>10</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{c3268487-defa-465e-b27d-842046ac31d1}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{4ea585ac-57fe-4f10-9a76-27d626390a8b}</destination>
 		</relationship>
@@ -132,6 +135,17 @@
 		<relationship name="markerTrack">
 			<destination>{b81ba9d4-2df7-4edf-99a3-a33a222d3e98}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{c3268487-defa-465e-b27d-842046ac31d1}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{4ea585ac-57fe-4f10-9a76-27d626390a8b}">
 		<relationship name="effects">

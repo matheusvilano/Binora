@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{81c2fbb2-d9c6-4f00-ac3d-c6c5c66a3143}">
 		<property name="name">
-			<value>BG_Wind</value>
+			<value>Cabin_BG_Wind</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -98,6 +98,9 @@
 		<property name="volume">
 			<value>4</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{28900a84-30fe-4275-86db-f511587d7af2}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{d1d9ed0d-ae17-4688-a006-4e3173639b25}</destination>
 		</relationship>
@@ -226,6 +229,17 @@
 		<relationship name="markerTrack">
 			<destination>{1b711566-5f0e-4344-a7a9-9f96598b2146}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{28900a84-30fe-4275-86db-f511587d7af2}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{d1d9ed0d-ae17-4688-a006-4e3173639b25}">
 		<relationship name="effects">
