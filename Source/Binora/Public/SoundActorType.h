@@ -50,17 +50,17 @@ inline uint8 operator *(ESoundActorType SoundType)
 		case ESoundActorType::ST_Background1:	return 0;
 		case ESoundActorType::ST_Background2:	return 1;
 
-		case ESoundActorType::ST_Emitter1:		return 0;
-		case ESoundActorType::ST_Emitter2:		return 1;
-		case ESoundActorType::ST_Emitter3:		return 2;
-		case ESoundActorType::ST_Emitter4:		return 3;
+		case ESoundActorType::ST_Emitter1:		return 2;
+		case ESoundActorType::ST_Emitter2:		return 3;
+		case ESoundActorType::ST_Emitter3:		return 4;
+		case ESoundActorType::ST_Emitter4:		return 5;
 
-		case ESoundActorType::ST_Spec1:			return 0;
-		case ESoundActorType::ST_Spec2:			return 1;
-		case ESoundActorType::ST_Spec3:			return 2;
-		case ESoundActorType::ST_Spec4:			return 3;
+		case ESoundActorType::ST_Spec1:			return 6;
+		case ESoundActorType::ST_Spec2:			return 7;
+		case ESoundActorType::ST_Spec3:			return 8;
+		case ESoundActorType::ST_Spec4:			return 9;
 
-		default: 								return NULL; // 0
+		default: 								return 0; // NULL
 	}
 }
 
