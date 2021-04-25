@@ -44,19 +44,19 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 		protected:
 
 			// Adds a certain number to the score.
-			UFUNCTION(BlueprintCallable, Category="Score")
+			UFUNCTION(BlueprintCallable, Category="Binora|Score")
 			void AddScore(uint8 Addend);
 
 			// Sets the score.
-			UFUNCTION(BlueprintCallable, Category="Score")
+			UFUNCTION(BlueprintCallable, Category="Binora|Score")
 			void SetScore(uint8 NewScore);
 
 			// Returns the score as a percentage.
-			UFUNCTION(BlueprintCallable, BlueprintPure)
+			UFUNCTION(BlueprintCallable, BlueprintPure, Category="Binora|Score")
 			float GetScoreAsPercentage() const;
 
 			// Returns the score as a category (Subpar, Good, Great, or Perfect).
-			UFUNCTION(BlueprintCallable, BlueprintPure)
+			UFUNCTION(BlueprintCallable, BlueprintPure, Category="Binora|Score")
 			EScoreCategory GetScoreAsCategory() const;
 
 	#pragma region State
@@ -64,7 +64,7 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 		public:
 
 			// Sets the Game Over state (generally to false).
-			UFUNCTION(BlueprintImplementableEvent, Exec)
+			UFUNCTION(BlueprintImplementableEvent)
 			void EndGame();
 
 	#pragma endregion
