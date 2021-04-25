@@ -66,6 +66,13 @@
 
 #pragma region Timer
 
+    // Set the timer.
+    float ABinoraGameState::SetMemorizationTimer(float NewTimeInSeconds)
+    {
+        this->MemorizationTimer = NewTimeInSeconds;
+        return this->MemorizationTimer;
+    }
+
     // Decrement the timer by 1 (second).
 	float ABinoraGameState::DecrementMemorizationTimer() 
     { 

@@ -47,6 +47,7 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|Visuals", DisplayName="Level Widget")
 			TSubclassOf<class UUserWidget> LevelWidget;
 
+			// Whether or not to include the visuals in the level.
 			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|Visuals", DisplayName="Include Visuals")
 			bool bIncludeVisuals = true;
 
@@ -81,6 +82,10 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 	#pragma region State
 
 		protected:
+
+			// Callback for the Confirm Input Action.
+			UFUNCTION()
+			void OnConfirm();
 
 			// Callback for FMODEventBeginPlay.
 			UFUNCTION()

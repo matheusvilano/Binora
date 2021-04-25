@@ -49,6 +49,10 @@ class BINORA_API ABinoraGameState : public AGameStateBase
 			UFUNCTION(BlueprintNativeEvent, Category="Binora|Timer", DisplayName="Timer Reached Zero")
 			void TimerReachedZero();
 
+			// Sets the Memorization Timer.
+			UFUNCTION()
+			float SetMemorizationTimer(float NewTimeInSeconds);
+
 		protected:
 
 			// The amount of time before the Memorization state is over. Replication comes next.
