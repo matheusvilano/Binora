@@ -37,7 +37,7 @@
 #pragma region Score
 
     // Adds a certain number to the score.
-    inline void ABinoraGameMode::AddScore(uint8 Addend)
+    void ABinoraGameMode::AddScore(uint8 Addend)
     {
         // Store the CurrentScore in a variable (for readability).
         uint8 NewScore = this->GetGameState<ABinoraGameState>()->GetScore() + Addend;
@@ -47,13 +47,13 @@
     }
 
     // Returns the score as a percentage.
-    inline float ABinoraGameMode::GetScoreAsPercentage() const
+    float ABinoraGameMode::GetScoreAsPercentage() const
     {
         return 100 * this->GetGameState<ABinoraGameState>()->GetScore() / this->MaxScore;
     }
 
     // Adds a certain number to the score.
-    inline void ABinoraGameMode::SetScore(uint8 NewScore)
+    void ABinoraGameMode::SetScore(uint8 NewScore)
     {
         // Only set the new score if it is within the 0-100 range.
         this->GetGameState<ABinoraGameState>()->SetScore((NewScore >= 0 && NewScore <= 100) ? NewScore : this->GetGameState<ABinoraGameState>()->GetScore());
