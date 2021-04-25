@@ -47,6 +47,9 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|Visuals", DisplayName="Level Widget")
 			TSubclassOf<class UUserWidget> LevelWidget;
 
+			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|Visuals", DisplayName="Include Visuals")
+			bool bIncludeVisuals = true;
+
 	#pragma endregion
 	
 	#pragma region Sound

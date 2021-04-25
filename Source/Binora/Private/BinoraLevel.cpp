@@ -43,7 +43,10 @@
         Super::BeginPlay();
 
         // Load visuals (widget): create, then add to viewport.
-        CreateWidget(this->AActor::GetWorld(), this->LevelWidget)->AddToViewport(0);
+        if (!this-bIncludeVisuals)
+        {
+            CreateWidget(this->AActor::GetWorld(), this->LevelWidget)->AddToViewport(0);
+        }
 
         // Update the FMODAudioComponent with the BeginPlay event.
         this->FMODAudioComponent->SetEvent(this->FMODEventBeginPlay);
