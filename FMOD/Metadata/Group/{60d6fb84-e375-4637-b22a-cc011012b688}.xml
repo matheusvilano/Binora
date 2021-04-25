@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{60d6fb84-e375-4637-b22a-cc011012b688}">
+		<property name="volume">
+			<value>-5.5</value>
+		</property>
 		<property name="name">
 			<value>SP_HauntedHouse</value>
 		</property>
@@ -17,8 +20,20 @@
 	<object class="MixerBusEffectChain" id="{1afeb4d6-abff-4b17-ba99-9b87c6c4b607}">
 		<relationship name="effects">
 			<destination>{4f1cd114-6ab6-4ae9-9882-c3630c733898}</destination>
+			<destination>{36f554bf-5c2e-46ac-aaf4-fcff939c6477}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7a2b1a85-afdf-49ad-bc6a-4b98b64c473e}" />
 	<object class="MixerBusFader" id="{4f1cd114-6ab6-4ae9-9882-c3630c733898}" />
+	<object class="CompressorEffect" id="{36f554bf-5c2e-46ac-aaf4-fcff939c6477}">
+		<property name="threshold">
+			<value>-13</value>
+		</property>
+		<property name="attackTime">
+			<value>7</value>
+		</property>
+		<property name="releaseTime">
+			<value>140</value>
+		</property>
+	</object>
 </objects>

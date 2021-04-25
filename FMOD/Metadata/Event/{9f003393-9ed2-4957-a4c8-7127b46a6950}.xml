@@ -108,7 +108,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{f35036d3-066f-43af-b0ea-bc5f37a06bf7}">
 		<property name="volume">
-			<value>5</value>
+			<value>-11</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -141,6 +141,7 @@
 		<relationship name="effects">
 			<destination>{927b547a-1e5a-456e-8ddd-3932486b3079}</destination>
 			<destination>{1760bd7d-366e-4a45-afde-83c5e0e52134}</destination>
+			<destination>{293175bd-1041-4a0b-9011-54784723c887}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4c68d8b1-5def-4d55-bcd9-229cba5880f9}" />
@@ -163,8 +164,22 @@
 	<object class="MixerBusPanner" id="{95a75b0c-f238-48ec-99ac-d04dd0fefebd}" />
 	<object class="MixerBusFader" id="{927b547a-1e5a-456e-8ddd-3932486b3079}" />
 	<object class="SpatialiserEffect" id="{1760bd7d-366e-4a45-afde-83c5e0e52134}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
 		<property name="maximumDistance">
-			<value>15</value>
+			<value>10</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{293175bd-1041-4a0b-9011-54784723c887}">
+		<property name="threshold">
+			<value>-24</value>
+		</property>
+		<property name="attackTime">
+			<value>7</value>
+		</property>
+		<property name="releaseTime">
+			<value>440</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{a30e4a38-101c-4534-a8ac-ef7e33a70c29}" />
