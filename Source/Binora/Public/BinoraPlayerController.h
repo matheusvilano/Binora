@@ -68,7 +68,11 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 
 			// Get the SoundActors.
 			UFUNCTION()
-			TArray<ASoundActor*> GetSoundActors();			
+			TArray<ASoundActor*> GetSoundActors();	
+
+			// Get the SoundPawns.
+			UFUNCTION()
+			TArray<ASoundPawn*> GetSoundPawns();		
 
 		protected:
 
@@ -77,20 +81,12 @@ class BINORA_API ABinoraPlayerController : public APlayerController
             TArray<ASoundActor*> SoundActors;
 
 			// The Background SoundPawns.
-			UPROPERTY(BlueprintReadOnly, Category="Binora|Pawns", DisplayName="Backgrounds")
-			TArray<ASoundPawn*> Backgrounds;
-
-			// The Emitter SoundPawns.
-			UPROPERTY(BlueprintReadOnly, Category="Binora|Pawns", DisplayName="Emitters")
-			TArray<ASoundPawn*> Emitters;
-
-			// The Specific SoundPawns.
-			UPROPERTY(BlueprintReadOnly, Category="Binora|Pawns", DisplayName="Specifics")
-			TArray<ASoundPawn*> Specs;
+			UPROPERTY(BlueprintReadOnly, Category="Binora|Pawns", DisplayName="Sound Pawns")
+			TArray<ASoundPawn*> SoundPawns;
 
 			// Spawns a SoundPawn and sets its SoundActorType and FMODEvent.
 			UFUNCTION()
-			void SpawnSoundPawn(TArray<ASoundPawn*>& SoundPawnArray, ESoundActorType SoundType, UFMODEvent* FMODEvent);
+			void SpawnSoundPawn(ESoundActorType SoundType, UFMODEvent* FMODEvent);
 
 			// The class of ASoundPawn to spawn.
 			UPROPERTY()
