@@ -14,7 +14,7 @@
 		#pragma region Framework
 		{
 			// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-			this->AActor::PrimaryActorTick.bCanEverTick = true;
+			this->AActor::PrimaryActorTick.bCanEverTick = false;
 
 			// Deactivate Default Movement Bindings
 			this->ADefaultPawn::bAddDefaultMovementBindings = false;
@@ -45,8 +45,15 @@
 		// Set the Sphere Radius. Note: values are clamped. Min=0, Max=1000.
 		this->ADefaultPawn::GetCollisionComponent()->InitSphereRadius(this->SphereRadius);
 
-		// Force this Pawn to be at 0.0f, 0.0f, 0.0f
-		this->AActor::SetActorLocation(FVector(0.0f, 0.0f, 0.0f));
+		// Force this Pawn to be at Z = 0.0f
+		{
+			// Get current location; adjust Z to 0.
+			FVector Location = this->AActor::GetActorLocation();
+			Location.Z = 0;
+
+			// Force SoundPawn to Z = 0.
+			this->AActor::SetActorLocation(Location);
+		}
 	}
 
 	// Called to bind functionality to input
