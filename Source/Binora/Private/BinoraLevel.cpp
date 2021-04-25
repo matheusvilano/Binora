@@ -63,8 +63,11 @@
     // The StartAudition event.
     void ABinoraLevel::StartAudition_Implementation()
     {
+        // Get Binora Game State
+        ABinoraGameState* BinoraGameState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()));
+
         // Get current Level State from BinoraGameState.
-        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
+        EBinoraLevelState CurrentLevelState = BinoraGameState->GetLevelState();
 
         // Update Level State.
         switch (CurrentLevelState)
@@ -72,6 +75,9 @@
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
             {
+                // Update Level State
+                BinoraGameState->SetLevelState(EBinoraLevelState::BLS_Audition);
+
                 // Get Player Controller
                 ABinoraPlayerController* BinoraPlayerController = Cast<ABinoraPlayerController>(UGameplayStatics::GetPlayerController(this->AActor::GetWorld(), 0));
 
@@ -91,8 +97,11 @@
     // The StopAudition event.
     void ABinoraLevel::StopAudition_Implementation()
     {
+        // Get Binora Game State
+        ABinoraGameState* BinoraGameState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()));
+
         // Get current state from BinoraGameState.
-        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
+        EBinoraLevelState CurrentLevelState = BinoraGameState->GetLevelState();
 
         // Update Level State.
         switch (CurrentLevelState)
@@ -100,6 +109,9 @@
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
             {
+                // Update Level State
+                BinoraGameState->SetLevelState(EBinoraLevelState::BLS_Replication);
+
                 // Get Player Controller
                 ABinoraPlayerController* BinoraPlayerController = Cast<ABinoraPlayerController>(UGameplayStatics::GetPlayerController(this->AActor::GetWorld(), 0));
 
@@ -119,8 +131,11 @@
     // The GameOver event's default implementation.
     void ABinoraLevel::GameOver()
     {
-        // Get current state from BinoraGameState.
-        EBinoraLevelState CurrentLevelState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()))->GetLevelState();
+        // Get Binora Game State
+        ABinoraGameState* BinoraGameState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()));
+
+        // Get current Level State from BinoraGameState.
+        EBinoraLevelState CurrentLevelState = BinoraGameState->GetLevelState();
 
         // Update Level State.
         switch (CurrentLevelState)
@@ -128,6 +143,9 @@
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
             {
+                // Update Level State
+                BinoraGameState->SetLevelState(EBinoraLevelState::BLS_Evaluation);
+
                 // Inform the GameMode that the user has pressed the Confirm button, so the level is ending. The GameMode will calculate the score and define performance.
                 Cast<ABinoraGameMode>(UGameplayStatics::GetGameMode(this->GetWorld()))->EndGame();
 

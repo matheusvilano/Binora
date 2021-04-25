@@ -91,12 +91,6 @@
 
 #pragma region State
 
-    // Sets the Game Over state (generally to false).
-    void ABinoraGameMode::EndGame_Implementation()
-    {
-        
-    }
-
     // Starts the memorization timer and sets the state to Memorization.
     void ABinoraGameMode::StartMemorizationTimer()
     {

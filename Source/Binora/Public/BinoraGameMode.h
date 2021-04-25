@@ -39,7 +39,7 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 		public:
 
 			// The player's score (based on the position of the SoundPawns). 
-			static const uint8 MaxScore = 100;
+			static const uint8 MaxScore = 30;
 
 		protected:
 
@@ -64,7 +64,7 @@ class BINORA_API ABinoraGameMode : public AGameModeBase
 		public:
 
 			// Sets the Game Over state (generally to false).
-			UFUNCTION(BlueprintNativeEvent, Exec)
+			UFUNCTION(BlueprintImplementableEvent, Exec)
 			void EndGame();
 
 	#pragma endregion
