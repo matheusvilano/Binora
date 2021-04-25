@@ -101,7 +101,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{43a8ff4c-f9c7-47d7-b983-257f4c368621}">
 		<property name="volume">
-			<value>7</value>
+			<value>-3</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -150,7 +150,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>8.19999981</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{c956b6ef-2757-4d1f-9fc9-e14e20153c55}" />
