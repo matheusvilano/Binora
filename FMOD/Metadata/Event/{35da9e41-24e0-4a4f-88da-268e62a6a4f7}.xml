@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{35da9e41-24e0-4a4f-88da-268e62a6a4f7}">
 		<property name="name">
-			<value>BG_BeachDIN</value>
+			<value>Beach_BG_DIN</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>

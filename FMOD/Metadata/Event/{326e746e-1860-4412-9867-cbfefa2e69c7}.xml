@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{326e746e-1860-4412-9867-cbfefa2e69c7}">
 		<property name="name">
-			<value>BG_CabinRattle</value>
+			<value>House_BG_CabinRattle</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -85,6 +85,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{a660c9bb-6a94-4687-933b-5d8c226c987b}">
+		<relationship name="modulators">
+			<destination>{1b2e4057-e710-4cd0-9e65-42c838d6cbc5}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{8539fd01-6718-420a-bc39-c25d3cf99f6d}</destination>
 		</relationship>
@@ -179,6 +182,17 @@
 		<relationship name="markerTrack">
 			<destination>{253c2e12-fc32-4c1c-8577-5fa4f33a1ea0}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{1b2e4057-e710-4cd0-9e65-42c838d6cbc5}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{8539fd01-6718-420a-bc39-c25d3cf99f6d}">
 		<relationship name="effects">

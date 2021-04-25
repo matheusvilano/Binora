@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{683f9e58-4e61-4760-8547-8408cc119fa4}">
 		<property name="name">
-			<value>EM_ChoppingWood</value>
+			<value>Cabin_EM_ChoppingWood</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -78,6 +78,9 @@
 		<property name="volume">
 			<value>10</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{7165feb1-1097-445b-9b38-a7ba302c38dc}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{1f984036-bb1f-4d42-99e2-61d417f97448}</destination>
 		</relationship>
@@ -138,6 +141,17 @@
 		<relationship name="markerTrack">
 			<destination>{ef30536f-77e3-431f-8a1e-e822936b7e54}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{7165feb1-1097-445b-9b38-a7ba302c38dc}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{1f984036-bb1f-4d42-99e2-61d417f97448}">
 		<relationship name="effects">

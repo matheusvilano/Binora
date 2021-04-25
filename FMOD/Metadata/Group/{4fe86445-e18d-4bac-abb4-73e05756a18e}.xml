@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{4fe86445-e18d-4bac-abb4-73e05756a18e}">
+		<property name="volume">
+			<value>-3.4000001</value>
+		</property>
 		<property name="name">
 			<value>HauntedHouse</value>
 		</property>
@@ -17,8 +20,14 @@
 	<object class="MixerBusEffectChain" id="{61a53f8f-b91a-4ea1-9ae1-6680deed9030}">
 		<relationship name="effects">
 			<destination>{2f4927f0-8107-44d1-8f13-7654340d4bc5}</destination>
+			<destination>{b63045b9-9cfd-463e-95e8-2c4fdb1eebf6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1810bd9d-581d-4bda-976d-193d58c79fa9}" />
 	<object class="MixerBusFader" id="{2f4927f0-8107-44d1-8f13-7654340d4bc5}" />
+	<object class="LoudnessMeter" id="{b63045b9-9cfd-463e-95e8-2c4fdb1eebf6}">
+		<property name="loudnessTarget">
+			<value>-24</value>
+		</property>
+	</object>
 </objects>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{78a91cf8-faff-4318-8662-02f47c0b9990}">
-		<property name="volume">
-			<value>2</value>
-		</property>
 		<property name="name">
 			<value>UI</value>
 		</property>
@@ -21,6 +18,7 @@
 		<relationship name="effects">
 			<destination>{f34a0eee-7569-4f46-ab81-4b87c26597bf}</destination>
 			<destination>{56db20ec-56ed-4b6a-9e5c-b2f89e0c046e}</destination>
+			<destination>{0c92556a-1730-4ec0-8728-1e52048c621f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{915ef483-1d9a-4fd1-a634-753ad32b84bf}" />
@@ -45,4 +43,5 @@
 			<value>10</value>
 		</property>
 	</object>
+	<object class="LoudnessMeter" id="{0c92556a-1730-4ec0-8728-1e52048c621f}" />
 </objects>

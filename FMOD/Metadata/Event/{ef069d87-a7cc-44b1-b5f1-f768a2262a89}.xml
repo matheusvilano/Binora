@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{ef069d87-a7cc-44b1-b5f1-f768a2262a89}">
 		<property name="name">
-			<value>SP_Coyote</value>
+			<value>Cabin_SP_Coyote</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -82,6 +82,9 @@
 		<property name="volume">
 			<value>-20.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{110cce5b-b2be-4120-8e21-1b1485d9caa4}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{61a211b3-67de-4ebc-b23b-c982d64c36a5}</destination>
 		</relationship>
@@ -148,6 +151,17 @@
 		<relationship name="markerTrack">
 			<destination>{46b08945-5655-44ed-8156-fb1ad2aa4e08}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{110cce5b-b2be-4120-8e21-1b1485d9caa4}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{61a211b3-67de-4ebc-b23b-c982d64c36a5}">
 		<relationship name="effects">

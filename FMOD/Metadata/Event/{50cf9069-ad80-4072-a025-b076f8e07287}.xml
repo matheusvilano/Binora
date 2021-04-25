@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{50cf9069-ad80-4072-a025-b076f8e07287}">
 		<property name="name">
-			<value>SP_BoatHorn</value>
+			<value>Beach_SP_BoatHorn</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -85,6 +85,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{7e3b71cf-200a-4ffa-8551-e3308b86fd61}">
+		<relationship name="modulators">
+			<destination>{526a215b-265e-4b32-8a56-b4f86ff3af5f}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{cc588f5c-a331-4f97-af13-6835aa99bc20}</destination>
 		</relationship>
@@ -113,6 +116,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e1556edd-0f54-423b-b75f-d64559a247ea}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<property name="name">
 			<value>Boat Horn Initial</value>
 		</property>
@@ -164,6 +170,17 @@
 		<relationship name="markerTrack">
 			<destination>{f3687436-fc02-4ac3-a301-572359b1a058}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{526a215b-265e-4b32-8a56-b4f86ff3af5f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{cc588f5c-a331-4f97-af13-6835aa99bc20}">
 		<relationship name="effects">

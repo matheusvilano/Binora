@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{263fb8bc-83cc-45a6-86db-641dc4859c17}">
 		<property name="name">
-			<value>SP_JetskiLoop</value>
+			<value>Beach_SP_JetskiLoop</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

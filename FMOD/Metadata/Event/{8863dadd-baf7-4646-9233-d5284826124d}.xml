@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{8863dadd-baf7-4646-9233-d5284826124d}">
 		<property name="name">
-			<value>EM_WaterDrips</value>
+			<value>House_EM_WaterDrips</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -77,6 +77,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b016b363-6e06-401b-99df-91fcbf82ccc9}">
+		<relationship name="modulators">
+			<destination>{beb73300-8ba7-4b3f-9b86-642fd0a7cbfb}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{bd75487f-0eae-4aae-a00b-b72ffb302983}</destination>
 		</relationship>
@@ -148,6 +151,17 @@
 		<relationship name="markerTrack">
 			<destination>{cb58497f-2fab-4b20-96bf-d775eed1101a}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{beb73300-8ba7-4b3f-9b86-642fd0a7cbfb}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{bd75487f-0eae-4aae-a00b-b72ffb302983}">
 		<relationship name="effects">

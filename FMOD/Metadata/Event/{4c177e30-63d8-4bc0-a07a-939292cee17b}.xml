@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{4c177e30-63d8-4bc0-a07a-939292cee17b}">
 		<property name="name">
-			<value>EM_SK8</value>
+			<value>Beach_EM_SK8</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{11d0d948-b490-4c4e-9625-a195c8b61aa8}">
+		<relationship name="modulators">
+			<destination>{9e26b7ea-866e-48eb-9950-20566e9d595e}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{605468a8-1079-4ab0-9d02-e35e4f87a4eb}</destination>
 		</relationship>
@@ -126,6 +129,17 @@
 		<relationship name="markerTrack">
 			<destination>{1b449c72-a41d-405d-ba93-2475ec979394}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{9e26b7ea-866e-48eb-9950-20566e9d595e}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{605468a8-1079-4ab0-9d02-e35e4f87a4eb}">
 		<relationship name="effects">

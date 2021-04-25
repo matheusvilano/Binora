@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{e0ad672c-cd61-43bd-9538-75b6a7921a2b}">
 		<property name="name">
-			<value>BG_WeatherStorm</value>
+			<value>House_BG_WeatherStorm</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1ecbe906-35a1-464c-89be-4d06c363f483}">
+		<relationship name="modulators">
+			<destination>{47b64a6f-e713-48b3-89ba-aa5a60c1d9b1}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{fc18520a-cedc-4f09-9a8f-ac68c1639951}</destination>
 		</relationship>
@@ -132,6 +135,17 @@
 		<relationship name="markerTrack">
 			<destination>{0cb09a58-cd77-4d2f-ac97-271ea31e97bb}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{47b64a6f-e713-48b3-89ba-aa5a60c1d9b1}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{fc18520a-cedc-4f09-9a8f-ac68c1639951}">
 		<relationship name="effects">
