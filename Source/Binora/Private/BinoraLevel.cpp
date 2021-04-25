@@ -2,6 +2,7 @@
 
 #include "BinoraLevel.h"
 
+#include "Blueprint/UserWidget.h"
 #include "BinoraHUD.h"
 #include "BinoraGameMode.h"
 #include "BinoraGameState.h"
@@ -11,12 +12,16 @@
 #include "FMODBlueprintStatics.h"
 #include "Kismet/GameplayStatics.h"
 #include "UObject/ConstructorHelpers.h"
+#include "UObject/SoftObjectPath.h"
 
 #pragma region Initialization
 
     // Constructor
     ABinoraLevel::ABinoraLevel()
     {
+        // Get default visuals (if existent). Set in BP if necessary.
+        this->LevelWidget = ConstructorHelpers::FClassFinder<UUserWidget>(TEXT("/Game/Blueprints/Widgets/WBP_LevelBackground")).Class;
+
         // Find FMOD Events (assets).
         static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEventBeginPlay(TEXT("/Game/FMOD/Events/VO/AnyLevel/BeginPlay/VO_AnyLevel_BeginPlay.VO_AnyLevel_BeginPlay"));
         static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEventGameOver(TEXT("/Game/FMOD/Events/VO/AnyLevel/GameOver/VO_GameOver.VO_GameOver"));
@@ -36,6 +41,9 @@
     {
         // Super BeginPlay.
         Super::BeginPlay();
+
+        // Load visuals (widget): create, then add to viewport.
+        CreateWidget(this->AActor::GetWorld(), this->LevelWidget)->AddToViewport(0);
 
         // Update the FMODAudioComponent with the BeginPlay event.
         this->FMODAudioComponent->SetEvent(this->FMODEventBeginPlay);

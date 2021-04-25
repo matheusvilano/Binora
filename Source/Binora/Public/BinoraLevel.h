@@ -4,9 +4,11 @@
 
 #include "CoreMinimal.h"
 
+#include "Blueprint/UserWidget.h"
 #include "Engine/LevelScriptActor.h"
 #include "FMODAudioComponent.h"
 #include "FMODBus.h"
+#include "Templates/SubclassOf.h"
 
 #include "BinoraLevel.generated.h"
 
@@ -34,6 +36,16 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			
 			// Called when the game starts or when spawned.
 			virtual void BeginPlay() override;
+
+	#pragma endregion
+
+	#pragma region Visuals
+
+		protected:
+
+			// The widget class to load on BeginPlay.
+			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|Visuals", DisplayName="Level Widget")
+			TSubclassOf<class UUserWidget> LevelWidget;
 
 	#pragma endregion
 	
