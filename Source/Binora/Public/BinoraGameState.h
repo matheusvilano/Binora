@@ -22,7 +22,7 @@ class BINORA_API ABinoraGameState : public AGameStateBase
 		protected:
 
 			// The current Level State: Narration, Memorization, Replication, Audition, or Evaluation.
-			UPROPERTY(BlueprintReadOnly, BlueprintGetter=GetLevelState, Category="Binora|State", DisplayName="Level State")
+			UPROPERTY(BlueprintReadOnly, Category="Binora|State", DisplayName="Level State")
 			EBinoraLevelState LevelState = EBinoraLevelState::BLS_Narration;
 
 		public:
@@ -32,7 +32,7 @@ class BINORA_API ABinoraGameState : public AGameStateBase
 			void SetLevelState(EBinoraLevelState NewLevelState);
 
 			// Get the current Level State: Narration, Memorization, Replication, Audition, or Evaluation.
-			UFUNCTION(BlueprintCallable, BlueprintPure, Category="Binora|State", DisplayName="Get Level State")
+			UFUNCTION()
 			EBinoraLevelState GetLevelState() const;
 
 	#pragma endregion
