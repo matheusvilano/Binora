@@ -58,9 +58,10 @@
         this->FMODAudioComponent->Play();
 
         // Bind the Confirm action to the GameOver function.
-        this->AActor::InputComponent->BindAction("Confirm", EInputEvent::IE_Pressed, this, &ABinoraLevel::GameOver);
+        this->AActor::InputComponent->BindAction("Confirm", EInputEvent::IE_Pressed, this, &ABinoraLevel::OnConfirm);
 
         // Bind the Return action to the ReturnToMainMenuFunction.
+        this->AActor::InputComponent->BindAction("Return", EInputEvent::IE_Pressed, this, &ABinoraLevel::ReturnToMainMenu);
 
         // Bind the Audit action to the AuditPawns function.
         this->AActor::InputComponent->BindAction("Audit", EInputEvent::IE_Pressed, this, &ABinoraLevel::StartAudition);
@@ -71,17 +72,42 @@
 
 #pragma region State
 
+    // Callback for the Confirm button.
+    void ABinoraLevel::OnConfirm()
+    {
+        // Fetch the Binora Game State.
+        ABinoraGameState* BinoraGameState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->AActor::GetWorld()));
+
+        // Decide what to do based on the Level State.
+        switch (BinoraGameState->GetLevelState())
+        {
+            case EBinoraLevelState::BLS_Replication:
+            case EBinoraLevelState::BLS_Audition:
+            {
+                // Game is over.
+                this->GameOver();
+            }
+            case EBinoraLevelState::BLS_Memorization:
+            {
+                // Force-set the Memorization timer to 0.
+                BinoraGameState->SetMemorizationTimer(0.0f);
+            }
+            default:
+            {
+                // Will add a Warning message here later.
+                break;
+            }
+        }
+    }
+
     // The StartAudition event.
     void ABinoraLevel::StartAudition_Implementation()
     {
         // Get Binora Game State
         ABinoraGameState* BinoraGameState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()));
 
-        // Get current Level State from BinoraGameState.
-        EBinoraLevelState CurrentLevelState = BinoraGameState->GetLevelState();
-
         // Update Level State.
-        switch (CurrentLevelState)
+        switch (BinoraGameState->GetLevelState())
         {
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
@@ -111,11 +137,8 @@
         // Get Binora Game State
         ABinoraGameState* BinoraGameState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()));
 
-        // Get current state from BinoraGameState.
-        EBinoraLevelState CurrentLevelState = BinoraGameState->GetLevelState();
-
         // Update Level State.
-        switch (CurrentLevelState)
+        switch (BinoraGameState->GetLevelState())
         {
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
@@ -145,11 +168,8 @@
         // Get Binora Game State
         ABinoraGameState* BinoraGameState = Cast<ABinoraGameState>(UGameplayStatics::GetGameState(this->GetWorld()));
 
-        // Get current Level State from BinoraGameState.
-        EBinoraLevelState CurrentLevelState = BinoraGameState->GetLevelState();
-
         // Update Level State.
-        switch (CurrentLevelState)
+        switch (BinoraGameState->GetLevelState())
         {
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
