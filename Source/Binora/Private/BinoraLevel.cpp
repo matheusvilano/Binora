@@ -22,13 +22,11 @@
         // Get default visuals (if existent). Set in BP if necessary.
         this->LevelWidget = ConstructorHelpers::FClassFinder<UUserWidget>(TEXT("/Game/Blueprints/Widgets/WBP_LevelBackground")).Class;
 
-        // Find FMOD Events (assets).
-        static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEventBeginPlay(TEXT("/Game/FMOD/Events/VO/AnyLevel/BeginPlay/VO_AnyLevel_BeginPlay.VO_AnyLevel_BeginPlay"));
-        static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEventGameOver(TEXT("/Game/FMOD/Events/VO/AnyLevel/GameOver/VO_GameOver.VO_GameOver"));
-
-        // Set FMOD Events.
-        this->FMODEventBeginPlay = dFMODEventBeginPlay.Object;
-        this->FMODEventGameOver = dFMODEventGameOver.Object;
+        // // Find FMOD Events (assets) and set them. NOTE: Only working in the editor, as FMOD references are NOT packaged.
+        // static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEventBeginPlay(TEXT("/Game/FMOD/Events/VO/AnyLevel/BeginPlay/VO_AnyLevel_BeginPlay.VO_AnyLevel_BeginPlay"));
+        // static ConstructorHelpers::FObjectFinder<UFMODEvent> dFMODEventGameOver(TEXT("/Game/FMOD/Events/VO/AnyLevel/GameOver/VO_GameOver.VO_GameOver"));
+        // this->FMODEventBeginPlay = dFMODEventBeginPlay.Object;
+        // this->FMODEventGameOver = dFMODEventGameOver.Object;
 
         // Prevent the FMODAudioComponent from auto-playing.
         this->FMODAudioComponent = this->AActor::CreateDefaultSubobject<UFMODAudioComponent>(TEXT("FMOD Audio Component"));

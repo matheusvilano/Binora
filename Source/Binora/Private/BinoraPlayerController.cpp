@@ -155,7 +155,7 @@
             SoundPawns[*SoundType] = Cast<ASoundPawn>(this->GetWorld()->SpawnActor<AActor>(SoundPawnClass, FVector(35.0f, 0.0f, 0.0f), FRotator(0.0f), SpawnParameters));
             SoundPawns[*SoundType]->SetSoundType(SoundType);
             SoundPawns[*SoundType]->GetFMODAudioComponent()->SetEvent(FMODEvent);
-            SoundPawns[*SoundType]->SetActorLabel(~SoundType); // This renames the Actor (so that it is easy to find it in the World Outliner).
+            // SoundPawns[*SoundType]->SetActorLabel(~SoundType); // This renames the Actor (so that it is easy to find it in the World Outliner).
         }
     }
 

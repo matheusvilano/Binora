@@ -62,11 +62,11 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			UFMODAudioComponent* FMODAudioComponent = nullptr;
 
 			// The opening line to be said by the narrator (brief instructions).
-			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (BeginPlay)")
+			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (BeginPlay)")
 			UFMODEvent* FMODEventBeginPlay = nullptr;
 
 			// The ending line to be said by the narrator (score category + thanks).
-			UPROPERTY(BlueprintReadOnly, VisibleDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (GameOver)")
+			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (GameOver)")
 			UFMODEvent* FMODEventGameOver = nullptr;
 
 			// Blueprint event that gets called once the timer starts.

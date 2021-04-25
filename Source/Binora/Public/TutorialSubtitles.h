@@ -7,6 +7,7 @@
 #include "Containers/UnrealString.h"
 #include "GameFramework/Actor.h"
 #include "FMODAudioComponent.h"
+#include "FMODEvent.h"
 
 #include "TutorialSubtitles.generated.h"
 
@@ -22,6 +23,9 @@ class BINORA_API ATutorialSubtitles : public AActor
 			// Sets default values for this actor's properties
 			ATutorialSubtitles();
 
+			// Construction script
+			virtual void OnConstruction(const FTransform& Transform) override;
+
 	#pragma endregion
 
 	#pragma region Sound
@@ -29,8 +33,12 @@ class BINORA_API ATutorialSubtitles : public AActor
 		protected:
 
 			// The FMOD Audio Component in charge of handling the Tutorial VO.
-			UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Binora|Tutorial", DisplayName="FMOD Audio Component")
+			UPROPERTY(BlueprintReadOnly, Category="Binora|Tutorial", DisplayName="FMOD Audio Component")
 			UFMODAudioComponent* FMODAudioComponent = nullptr;
+
+			// The FMOD Event for the Tutorial section.
+			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|Tutorial", DisplayName="FMOD Event")
+			UFMODEvent* FMODEvent = nullptr;
 
 			// Updates the currnet line corresponding to a FMOD Timeline Marker. The timeline position is unused, but necessary for the callback.
 			UFUNCTION()
