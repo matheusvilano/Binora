@@ -69,6 +69,10 @@ class BINORA_API ABinoraLevel : public ALevelScriptActor
 			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Event (GameOver)")
 			UFMODEvent* FMODEventGameOver = nullptr;
 
+			// The ending line to be said by the narrator (score category + thanks).
+			UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category="Binora|FMOD", DisplayName="FMOD Bus (Music)")
+			UFMODBus* FMODMusicBus = nullptr;
+
 			// Blueprint event that gets called once the timer starts.
 			UFUNCTION(BlueprintImplementableEvent, Category="Binora|State", DisplayName="Level Started")
 			void LevelStarted();

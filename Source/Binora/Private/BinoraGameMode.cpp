@@ -96,7 +96,7 @@
     {
         // Set the Level State to Memorization, then start decrementing the memorization time every second.
         this->GetGameState<ABinoraGameState>()->SetLevelState(EBinoraLevelState::BLS_Memorization);
-        this->AActor::GetWorldTimerManager().SetTimer(this->MemorizationTimerHandle, this, &ABinoraGameMode::DecrementMemorizationTimer, 1.0f, true, 0.0f);
+        this->AActor::GetWorldTimerManager().SetTimer(this->MemorizationTimerHandle, this, &ABinoraGameMode::DecrementMemorizationTimer, 1.0f, true, 1.0f);
     }
 
     // The memorization timer should decrement every second.

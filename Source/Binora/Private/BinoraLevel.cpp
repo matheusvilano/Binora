@@ -79,16 +79,25 @@
         // Decide what to do based on the Level State.
         switch (BinoraGameState->GetLevelState())
         {
+            case EBinoraLevelState::BLS_Narration:
+            {
+                // Stopping the FMOD event will cause the audio callback to run, therefore changing the Level State to Replication.
+                this->FMODAudioComponent->Stop();
+                UFMODBlueprintStatics::BusStopAllEvents(FMODMusicBus, EFMOD_STUDIO_STOP_MODE::ALLOWFADEOUT); // Make sure the music stops playing.
+                break;
+            }
             case EBinoraLevelState::BLS_Replication:
             case EBinoraLevelState::BLS_Audition:
             {
                 // Game is over.
                 this->GameOver();
+                break;
             }
             case EBinoraLevelState::BLS_Memorization:
             {
                 // Force-set the Memorization timer to 0.
                 BinoraGameState->SetMemorizationTimer(0.0f);
+                break;
             }
             default:
             {
