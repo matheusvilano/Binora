@@ -123,7 +123,7 @@
             {
                 // Backgrounds
                 this->BinoraInputComponent->BindAction("SelectBackground1", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->SoundPawns[*ESoundActorType::ST_Background1]);});
-                this->BinoraInputComponent->BindAction("SelectBackgorund2", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->SoundPawns[*ESoundActorType::ST_Background2]);});
+                this->BinoraInputComponent->BindAction("SelectBackground2", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->SoundPawns[*ESoundActorType::ST_Background2]);});
 
                 // Emitters
                 this->BinoraInputComponent->BindAction("SelectEmitter1", EInputEvent::IE_Pressed, this, [this](){this->APlayerController::Possess(this->SoundPawns[*ESoundActorType::ST_Emitter1]);});
