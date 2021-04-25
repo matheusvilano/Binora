@@ -102,7 +102,7 @@
 			<value>59.280291666666663</value>
 		</property>
 		<property name="volume">
-			<value>2.5</value>
+			<value>5</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -113,7 +113,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{f2202f91-575c-4162-b007-398b270d6483}">
 		<property name="volume">
-			<value>8</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
