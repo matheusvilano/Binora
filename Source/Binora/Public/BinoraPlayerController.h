@@ -67,13 +67,13 @@ class BINORA_API ABinoraPlayerController : public APlayerController
 			void StopAllSoundPawns();
 
 			// Get the SoundActors.
-			UFUNCTION(BlueprintPure)
+			UFUNCTION()
 			TArray<ASoundActor*> GetSoundActors();			
 
 		protected:
 
 			// All SoundActors. Array to be used when creating SoundPawns.
-			UPROPERTY(BlueprintReadOnly, BlueprintGetter=GetSoundActors, Category="Binora|Actors", DisplayName="Sound Actors")
+			UPROPERTY(BlueprintReadOnly, Category="Binora|Actors", DisplayName="Sound Actors")
             TArray<ASoundActor*> SoundActors;
 
 			// The Background SoundPawns.

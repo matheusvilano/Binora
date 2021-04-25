@@ -56,4 +56,24 @@ class BINORA_API ABinoraGameState : public AGameStateBase
 			float MemorizationTimer = 60.0f; // In seconds (one minute).
 
 	#pragma endregion
+
+	#pragma region Score
+
+		public:
+
+			// Get the players score.
+			UFUNCTION()
+			uint8 GetScore() const;
+
+			// Set the player score.
+			UFUNCTION()
+			uint8 SetScore(uint8 NewScore);
+
+		protected:
+
+			// The player's score (based on the position of the SoundPawns).
+			UPROPERTY()
+			uint8 Score = 0;
+
+	#pragma endregion
 };

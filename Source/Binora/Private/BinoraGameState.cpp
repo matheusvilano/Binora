@@ -83,3 +83,20 @@
     }
 
 #pragma endregion
+
+#pragma region Score
+
+    // Get the player score.
+    uint8 ABinoraGameState::GetScore() const
+    {
+        return this->Score;
+    }
+
+    // Set the player score.
+    uint8 ABinoraGameState::SetScore(uint8 NewScore)
+    {
+        this->Score = NewScore;
+        return this->Score;
+    }
+
+#pragma endregion
