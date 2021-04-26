@@ -61,6 +61,7 @@
 	<object class="GroupTrack" id="{92acaab7-011c-45a8-9b5c-69bcdbf72ec6}">
 		<relationship name="modules">
 			<destination>{09330fed-bb76-4dbf-a6d3-b18e363b068c}</destination>
+			<destination>{11bb50a6-92b2-489b-be6a-4f153930c3c2}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{e5805112-a4e7-4b74-8bc4-977c4b4e424c}</destination>
@@ -69,6 +70,7 @@
 	<object class="Timeline" id="{941dc138-7d17-4d3b-a74c-4461c6ae2204}">
 		<relationship name="modules">
 			<destination>{09330fed-bb76-4dbf-a6d3-b18e363b068c}</destination>
+			<destination>{11bb50a6-92b2-489b-be6a-4f153930c3c2}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{caede94a-6227-427c-b6e0-f383470e83fd}</destination>
@@ -101,6 +103,9 @@
 		<property name="triggerProbability">
 			<value>69</value>
 		</property>
+		<property name="start">
+			<value>6.0500000000000007</value>
+		</property>
 		<property name="length">
 			<value>7</value>
 		</property>
@@ -108,6 +113,14 @@
 			<destination>{7cc3ff11-e29d-4696-8714-4c823fb477c7}</destination>
 			<destination>{40922812-c407-4169-b88c-999f3da6ffe2}</destination>
 			<destination>{19eb7f21-224c-4c89-81fe-2041860e5786}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{11bb50a6-92b2-489b-be6a-4f153930c3c2}">
+		<property name="length">
+			<value>5.978979166666667</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{b81f90f2-f2aa-4314-80f1-a4a4d788da2c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e5805112-a4e7-4b74-8bc4-977c4b4e424c}">
@@ -129,10 +142,10 @@
 	</object>
 	<object class="LoopRegion" id="{caede94a-6227-427c-b6e0-f383470e83fd}">
 		<property name="position">
-			<value>0</value>
+			<value>5.978979166666667</value>
 		</property>
 		<property name="length">
-			<value>7</value>
+			<value>7.0710208333333338</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{941dc138-7d17-4d3b-a74c-4461c6ae2204}</destination>
