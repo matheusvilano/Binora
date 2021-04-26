@@ -76,7 +76,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{f1c33494-4fa2-49f7-8eb6-2b645031a528}">
 		<property name="volume">
-			<value>1</value>
+			<value>10</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{e7b7224e-374d-41e9-a3a9-ea846d9d8c6d}</destination>
@@ -113,13 +113,14 @@
 	</object>
 	<object class="EventMixerGroup" id="{c5bfc43e-840b-4567-8395-b2f0ebcec0dd}">
 		<property name="volume">
-			<value>10</value>
+			<value>1.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{6a542ffd-26b0-498e-b000-dcb963f5efbf}</destination>
+			<destination>{bd6e6cde-6e06-4d84-ab03-aac9a304a542}</destination>
 		</relationship>
 		<relationship name="effectChain">
 			<destination>{815413f1-f0d9-4ffd-bb99-2ae5b6e12a15}</destination>
@@ -160,6 +161,8 @@
 		<relationship name="effects">
 			<destination>{86b55503-cb7b-4694-8e77-0ee79f4171c1}</destination>
 			<destination>{cb400d72-f8b8-4388-882d-c235790b9073}</destination>
+			<destination>{e09e3ee6-e090-4737-82a6-88ce42a90eb9}</destination>
+			<destination>{315a522c-7e61-4b4f-93d9-d221e8c0ff2a}</destination>
 			<destination>{4f2fe7b2-bf26-414c-8176-6f7cd18e9eee}</destination>
 		</relationship>
 	</object>
@@ -169,14 +172,22 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
 		<property name="rate">
 			<value>0.049999997</value>
 		</property>
 		<property name="depth">
-			<value>13</value>
+			<value>9</value>
 		</property>
 		<property name="direction">
 			<value>-100</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{bd6e6cde-6e06-4d84-ab03-aac9a304a542}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{815413f1-f0d9-4ffd-bb99-2ae5b6e12a15}">
@@ -194,10 +205,56 @@
 			<value>7</value>
 		</property>
 	</object>
-	<object class="MixerSend" id="{4f2fe7b2-bf26-414c-8176-6f7cd18e9eee}">
-		<property name="level">
-			<value>-3.5</value>
+	<object class="CompressorEffect" id="{e09e3ee6-e090-4737-82a6-88ce42a90eb9}">
+		<property name="threshold">
+			<value>-37.5</value>
 		</property>
+		<property name="ratio">
+			<value>2.60000014</value>
+		</property>
+		<property name="attackTime">
+			<value>22</value>
+		</property>
+		<property name="releaseTime">
+			<value>140</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{315a522c-7e61-4b4f-93d9-d221e8c0ff2a}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
+		<property name="filterTypeA">
+			<value>9</value>
+		</property>
+		<property name="filterTypeC">
+			<value>9</value>
+		</property>
+		<property name="frequencyA">
+			<value>3073.21704</value>
+		</property>
+		<property name="frequencyB">
+			<value>10011.3076</value>
+		</property>
+		<property name="frequencyC">
+			<value>4462.32178</value>
+		</property>
+		<property name="qualityA">
+			<value>10</value>
+		</property>
+		<property name="qualityC">
+			<value>10</value>
+		</property>
+		<property name="gainA">
+			<value>-22</value>
+		</property>
+		<property name="gainB">
+			<value>-9.5</value>
+		</property>
+		<property name="gainC">
+			<value>-23</value>
+		</property>
+	</object>
+	<object class="MixerSend" id="{4f2fe7b2-bf26-414c-8176-6f7cd18e9eee}">
 		<property name="inputFormat">
 			<value>2</value>
 		</property>
