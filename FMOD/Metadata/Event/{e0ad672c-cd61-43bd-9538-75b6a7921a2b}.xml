@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e0ad672c-cd61-43bd-9538-75b6a7921a2b}">
 		<property name="name">
 			<value>House_BG_WeatherStorm</value>
@@ -56,7 +56,11 @@
 			<destination>{05685e60-65ea-43a3-b821-2b325f7f002b}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{b507de40-3495-4f61-bee6-d3359a4d592e}" />
+	<object class="EventAutomatableProperties" id="{b507de40-3495-4f61-bee6-d3359a4d592e}">
+		<property name="maximumDistance">
+			<value>8.19999981</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{0cb09a58-cd77-4d2f-ac97-271ea31e97bb}" />
 	<object class="GroupTrack" id="{38a09c6c-cee6-489c-85b1-a73fc34b2707}">
 		<relationship name="modules">

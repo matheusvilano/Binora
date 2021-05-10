@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{a90fe5dd-1212-430c-a1c7-1fcab542580b}">
 		<property name="name">
 			<value>Beach_BG_WaveyBois</value>
@@ -56,7 +56,11 @@
 			<destination>{a4344860-6378-4362-b7b4-626b0a80cc75}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{edd0af2a-5655-41d2-8aa3-f26ebe4f97c1}" />
+	<object class="EventAutomatableProperties" id="{edd0af2a-5655-41d2-8aa3-f26ebe4f97c1}">
+		<property name="maximumDistance">
+			<value>7</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{b81ba9d4-2df7-4edf-99a3-a33a222d3e98}" />
 	<object class="GroupTrack" id="{08a4640f-7b9d-4a66-a61e-825ef203e5f9}">
 		<relationship name="modules">

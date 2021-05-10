@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2d34ebbc-5d61-472c-9809-c2e98dc4221f}">
 		<property name="name">
 			<value>UI_LevelButtonClicked</value>

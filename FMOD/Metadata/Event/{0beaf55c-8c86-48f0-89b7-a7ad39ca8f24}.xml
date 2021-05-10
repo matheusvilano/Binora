@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0beaf55c-8c86-48f0-89b7-a7ad39ca8f24}">
 		<property name="name">
 			<value>UI_QuitButtonClicked</value>
@@ -84,8 +84,8 @@
 	</object>
 	<object class="Timeline" id="{1ceeb726-fb71-43b7-a19a-c7a9ebf924ef}">
 		<relationship name="modules">
-			<destination>{abe533c4-8e4a-41fd-b1b2-dc950822f622}</destination>
 			<destination>{05111ea2-5a46-402b-b1c4-8fe28e0c15e5}</destination>
+			<destination>{abe533c4-8e4a-41fd-b1b2-dc950822f622}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1373c001-f929-4dd8-8121-d05d614a1e4a}">
@@ -215,8 +215,8 @@
 		</relationship>
 		<relationship name="automationPoints">
 			<destination>{97c3542b-4034-48f3-a9c8-c9a998d097d3}</destination>
-			<destination>{f5cdce13-117c-43b1-a137-e0bed8608a33}</destination>
 			<destination>{be5caf13-3ba4-4180-be27-0b4f736aa432}</destination>
+			<destination>{f5cdce13-117c-43b1-a137-e0bed8608a33}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{2207cafb-d123-45dd-aa41-d6d51d017886}" />
@@ -249,17 +249,6 @@
 			<value>-3</value>
 		</property>
 	</object>
-	<object class="AutomationPoint" id="{f5cdce13-117c-43b1-a137-e0bed8608a33}">
-		<property name="position">
-			<value>0.0087711864406779666</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>-0.255891651</value>
-		</property>
-	</object>
 	<object class="AutomationPoint" id="{be5caf13-3ba4-4180-be27-0b4f736aa432}">
 		<property name="position">
 			<value>0.60000000000000009</value>
@@ -269,6 +258,17 @@
 		</property>
 		<property name="curveShape">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{f5cdce13-117c-43b1-a137-e0bed8608a33}">
+		<property name="position">
+			<value>0.0087711864406779666</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.255891651</value>
 		</property>
 	</object>
 </objects>

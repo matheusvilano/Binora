@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{81c2fbb2-d9c6-4f00-ac3d-c6c5c66a3143}">
 		<property name="name">
 			<value>Cabin_BG_Wind</value>
@@ -58,7 +58,11 @@
 			<destination>{0a2d642a-6ebc-421e-b8dc-f25b03792fe3}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{23685605-ebdb-4d78-8cf9-91e9c6e56ab2}" />
+	<object class="EventAutomatableProperties" id="{23685605-ebdb-4d78-8cf9-91e9c6e56ab2}">
+		<property name="maximumDistance">
+			<value>7</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{1b711566-5f0e-4344-a7a9-9f96598b2146}" />
 	<object class="GroupTrack" id="{8bf9049a-e3de-4a5e-a112-47256999c80e}">
 		<relationship name="modules">
@@ -86,8 +90,8 @@
 	</object>
 	<object class="Timeline" id="{9d31717c-db88-45c3-a8f0-2e5441c4d10f}">
 		<relationship name="modules">
-			<destination>{bf51120d-a52a-49aa-830e-73e00d35fead}</destination>
 			<destination>{e4994f87-82dc-4667-bc88-2c7b3c33dd4c}</destination>
+			<destination>{bf51120d-a52a-49aa-830e-73e00d35fead}</destination>
 			<destination>{e741c523-97d3-4602-9c21-0a68ed80a798}</destination>
 		</relationship>
 		<relationship name="markers">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{910a6b36-145c-4e93-a2b2-5af70f50386d}">
 		<property name="name">
 			<value>Cabin_SP_Elk</value>
@@ -59,6 +59,9 @@
 	<object class="EventAutomatableProperties" id="{adac9eb3-5a4b-439e-aacf-2d20975b5e70}">
 		<property name="maxVoices">
 			<value>3</value>
+		</property>
+		<property name="maximumDistance">
+			<value>7</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{31d3800a-a8d1-40c8-9907-6129184db449}" />

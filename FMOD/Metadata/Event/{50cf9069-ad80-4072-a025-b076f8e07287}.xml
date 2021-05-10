@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{50cf9069-ad80-4072-a025-b076f8e07287}">
 		<property name="name">
 			<value>Beach_SP_BoatHorn</value>
@@ -57,7 +57,11 @@
 			<destination>{8b5ea1f7-43a1-4056-bfad-229eee1abf3c}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{8587adb4-86b5-4c67-9364-171735c93c7c}" />
+	<object class="EventAutomatableProperties" id="{8587adb4-86b5-4c67-9364-171735c93c7c}">
+		<property name="maximumDistance">
+			<value>7</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{f3687436-fc02-4ac3-a301-572359b1a058}" />
 	<object class="GroupTrack" id="{8be49c12-5b5e-44f4-b51e-49c09feb5c41}">
 		<relationship name="modules">

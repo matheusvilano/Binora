@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b427379e-31ef-4bd7-995e-2c40a2500f64}">
 		<property name="name">
 			<value>Cabin_EM_Fireplace</value>
@@ -56,7 +56,11 @@
 			<destination>{ed101dd4-1fce-4518-ab95-c5513ae4583b}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{b42b1b24-2baa-4cd4-81f5-f2a5a731fc1e}" />
+	<object class="EventAutomatableProperties" id="{b42b1b24-2baa-4cd4-81f5-f2a5a731fc1e}">
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{8fa6d1ab-0f1a-4b4d-b1e1-7e9942b03030}" />
 	<object class="GroupTrack" id="{fb0b8921-16ce-4461-9a28-fe9c7421c1bf}">
 		<relationship name="modules">

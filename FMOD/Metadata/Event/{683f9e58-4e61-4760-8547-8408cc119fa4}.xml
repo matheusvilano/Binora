@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{683f9e58-4e61-4760-8547-8408cc119fa4}">
 		<property name="name">
 			<value>Cabin_EM_ChoppingWood</value>
@@ -56,7 +56,11 @@
 			<destination>{ed101dd4-1fce-4518-ab95-c5513ae4583b}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{7cc84de2-b31b-4bdf-a3de-7f17d37966f0}" />
+	<object class="EventAutomatableProperties" id="{7cc84de2-b31b-4bdf-a3de-7f17d37966f0}">
+		<property name="maximumDistance">
+			<value>7</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{ef30536f-77e3-431f-8a1e-e822936b7e54}" />
 	<object class="GroupTrack" id="{67a41390-f0aa-4035-84d3-6eaee4817a41}">
 		<relationship name="modules">

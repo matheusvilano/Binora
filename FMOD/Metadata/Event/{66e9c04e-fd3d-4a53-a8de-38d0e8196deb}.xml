@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{66e9c04e-fd3d-4a53-a8de-38d0e8196deb}">
 		<property name="name">
 			<value>Beach_SP_BoatHornLoop</value>

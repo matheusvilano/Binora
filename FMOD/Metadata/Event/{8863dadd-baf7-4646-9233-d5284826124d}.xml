@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8863dadd-baf7-4646-9233-d5284826124d}">
 		<property name="name">
 			<value>House_EM_WaterDrips</value>
@@ -56,7 +56,11 @@
 			<destination>{e1941fc6-6ec9-4ba6-911c-4c27292e2759}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{c96153af-17dc-4e37-a3d3-376df2658624}" />
+	<object class="EventAutomatableProperties" id="{c96153af-17dc-4e37-a3d3-376df2658624}">
+		<property name="maximumDistance">
+			<value>15</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{cb58497f-2fab-4b20-96bf-d775eed1101a}" />
 	<object class="GroupTrack" id="{ff0968d5-89be-4b70-98fa-c99c2bd7b3f4}">
 		<relationship name="modules">

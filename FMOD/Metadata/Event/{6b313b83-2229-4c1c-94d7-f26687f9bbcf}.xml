@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{6b313b83-2229-4c1c-94d7-f26687f9bbcf}">
 		<property name="name">
 			<value>Beach_EM_Flagpole</value>
@@ -56,7 +56,11 @@
 			<destination>{aef2d0fd-853a-4f79-b1bb-90346c3d0c50}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{d7a263a1-4dee-4b3c-b312-c6667dd2bab3}" />
+	<object class="EventAutomatableProperties" id="{d7a263a1-4dee-4b3c-b312-c6667dd2bab3}">
+		<property name="maximumDistance">
+			<value>7</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{5c79f289-a16e-465c-8e17-8df7aa66697f}" />
 	<object class="GroupTrack" id="{3dd7610d-55f6-41b4-a86e-758af123ddc6}">
 		<relationship name="modules">

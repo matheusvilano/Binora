@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{4c177e30-63d8-4bc0-a07a-939292cee17b}">
 		<property name="name">
 			<value>Beach_EM_SK8</value>
@@ -56,7 +56,11 @@
 			<destination>{aef2d0fd-853a-4f79-b1bb-90346c3d0c50}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{32ef88f7-8a74-449d-9121-146e50ca8df5}" />
+	<object class="EventAutomatableProperties" id="{32ef88f7-8a74-449d-9121-146e50ca8df5}">
+		<property name="maximumDistance">
+			<value>7</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{1b449c72-a41d-405d-ba93-2475ec979394}" />
 	<object class="GroupTrack" id="{231c72ed-bda8-44aa-a471-fa030742476a}">
 		<relationship name="modules">

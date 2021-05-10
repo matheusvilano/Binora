@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{c85fcb80-5efc-4fed-8269-7e635866da4c}">
 		<property name="name">
 			<value>Cabin_SP_Birds</value>
@@ -59,6 +59,9 @@
 	<object class="EventAutomatableProperties" id="{9805583d-d1c8-46af-bf4e-301f3b6b26c5}">
 		<property name="maxVoices">
 			<value>1</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
 		</property>
 		<property name="triggerCooldown">
 			<value>960</value>

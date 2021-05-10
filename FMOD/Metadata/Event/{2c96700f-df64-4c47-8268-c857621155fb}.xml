@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2c96700f-df64-4c47-8268-c857621155fb}">
 		<property name="name">
 			<value>House_EM_MusicBox</value>
@@ -56,7 +56,11 @@
 			<destination>{e1941fc6-6ec9-4ba6-911c-4c27292e2759}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{b7187909-9768-4dc1-b31d-4ab2887397e3}" />
+	<object class="EventAutomatableProperties" id="{b7187909-9768-4dc1-b31d-4ab2887397e3}">
+		<property name="maximumDistance">
+			<value>8.19999981</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{d6971fee-1094-4ca9-804b-60f20d6419f2}" />
 	<object class="GroupTrack" id="{ea716052-4e01-4688-988a-071f987896fc}">
 		<relationship name="modules">

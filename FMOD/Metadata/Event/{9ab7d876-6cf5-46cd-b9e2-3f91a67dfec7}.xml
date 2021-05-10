@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9ab7d876-6cf5-46cd-b9e2-3f91a67dfec7}">
 		<property name="name">
 			<value>House_SP_ChildCrying</value>
@@ -56,7 +56,11 @@
 			<destination>{60d6fb84-e375-4637-b22a-cc011012b688}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{e2bd85ce-2f71-4b09-b829-3d2672ed714e}" />
+	<object class="EventAutomatableProperties" id="{e2bd85ce-2f71-4b09-b829-3d2672ed714e}">
+		<property name="maximumDistance">
+			<value>7.20000029</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{58c54ba7-954e-405e-b8f2-cb5389a57d0f}" />
 	<object class="GroupTrack" id="{0c7f2191-a5c3-4cd1-8461-42cf6e7fe436}">
 		<relationship name="modules">
