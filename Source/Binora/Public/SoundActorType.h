@@ -42,7 +42,7 @@ inline FString operator ~(ESoundActorType SoundType)
 	}
 }
 
-// Returns true if the value is SPT_Unspecified.
+// This overloaded operator re-enumerates the Sound Actor Types without accounting for the Unspecified type. The original idea was to remove Unspecified, but that caused many ESoundActorType variables to contain the wrong value in the Editor. Due to time constraints, this workaround was used.
 inline uint8 operator *(ESoundActorType SoundType)
 {
 	switch (SoundType)
