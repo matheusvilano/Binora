@@ -41,7 +41,7 @@
         Super::BeginPlay();
 
         // Load visuals (widget): create, then add to viewport.
-        if (!this-bIncludeVisuals)
+        if (!this->bIncludeVisuals)
         {
             CreateWidget(this->AActor::GetWorld(), this->LevelWidget)->AddToViewport(0);
         }
