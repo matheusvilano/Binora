@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{e2a4f21f-bdee-4134-ab67-d236345387ad}">
+		<property name="volume">
+			<value>-4.5999999</value>
+		</property>
+		<property name="name">
+			<value>Cabin</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{ed3e9af9-5eac-427d-9f0f-79aba92aa18c}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{4fefec56-429e-4be9-9f83-d0379022e577}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{53891215-5eb4-4033-b336-7a94a4537c16}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{ed3e9af9-5eac-427d-9f0f-79aba92aa18c}">
+		<relationship name="effects">
+			<destination>{44a69cd6-7463-4e6c-8f0f-267d61ab0608}</destination>
+			<destination>{26565d80-ebfb-4446-a806-d5871304853d}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{4fefec56-429e-4be9-9f83-d0379022e577}" />
+	<object class="MixerBusFader" id="{44a69cd6-7463-4e6c-8f0f-267d61ab0608}" />
+	<object class="LoudnessMeter" id="{26565d80-ebfb-4446-a806-d5871304853d}">
+		<property name="loudnessTarget">
+			<value>-24</value>
+		</property>
+	</object>
+</objects>

@@ -30,6 +30,11 @@ FMOD/unsaved/
 FMOD/user/
 FMOD/fmod.log
 FMOD/fmod_editor.log
+FMOD/Build/**/*.bank
+FMOD/Build/**/*.strings.bank
+Content/FMOD/**/*.bank
+Content/FMOD/**/.strings.bank
+Plugins/FMODStudio/
 
 # Code Editors
 .vs/
@@ -62,4 +67,3 @@ Thumbs.db.meta
 *.DS_Store
 #TestExtraContent
 Content/PhotoR_Backgrounds
-Plugins/FMODStudio/

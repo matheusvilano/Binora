@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{53891215-5eb4-4033-b336-7a94a4537c16}">
+		<property name="name">
+			<value>LVL</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{f81057d2-4a4d-4b62-8973-ed5057d77710}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{1e99695d-6810-4f43-a0a3-f6dd79514544}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{368b441f-8721-4c1d-b65d-c8013cd46185}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{a8173c4e-a638-49ee-a0b1-79fd9e411b4a}</destination>
+		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{f81057d2-4a4d-4b62-8973-ed5057d77710}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="MixerBusEffectChain" id="{1e99695d-6810-4f43-a0a3-f6dd79514544}">
+		<relationship name="effects">
+			<destination>{528ff972-8193-48d4-b394-f34c1b59ece1}</destination>
+			<destination>{f96a7144-f773-4b2e-81ed-c1773d58341a}</destination>
+			<destination>{26a75753-6d39-41b4-a38c-78becef1e3ee}</destination>
+			<destination>{819df258-317c-4a75-82c5-5b7daff86ea8}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{368b441f-8721-4c1d-b65d-c8013cd46185}" />
+	<object class="MixerBusFader" id="{528ff972-8193-48d4-b394-f34c1b59ece1}" />
+	<object class="CompressorEffect" id="{f96a7144-f773-4b2e-81ed-c1773d58341a}">
+		<property name="threshold">
+			<value>-40</value>
+		</property>
+		<property name="ratio">
+			<value>10.5</value>
+		</property>
+		<property name="attackTime">
+			<value>0.100000001</value>
+		</property>
+		<property name="releaseTime">
+			<value>1000</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{bec07342-c73e-4a66-a368-732e96bf40f7}</destination>
+		</relationship>
+	</object>
+	<object class="CompressorEffect" id="{26a75753-6d39-41b4-a38c-78becef1e3ee}">
+		<property name="threshold">
+			<value>-22.5</value>
+		</property>
+		<property name="ratio">
+			<value>50</value>
+		</property>
+		<property name="releaseTime">
+			<value>20</value>
+		</property>
+	</object>
+	<object class="LoudnessMeter" id="{819df258-317c-4a75-82c5-5b7daff86ea8}" />
+</objects>

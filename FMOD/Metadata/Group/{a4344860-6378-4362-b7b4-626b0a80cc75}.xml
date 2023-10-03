@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{a4344860-6378-4362-b7b4-626b0a80cc75}">
+		<property name="name">
+			<value>BG_Beach</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{0d590d56-611d-41cd-be9b-91201b6bc00d}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{4910c004-b088-456b-a687-9551fe1a74ea}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{4ded3cb8-a3ed-4b0c-b4a8-f1e8e6a67bb8}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{0d590d56-611d-41cd-be9b-91201b6bc00d}">
+		<relationship name="effects">
+			<destination>{3eccba61-274e-470a-8a9d-34deb5ec1990}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{4910c004-b088-456b-a687-9551fe1a74ea}" />
+	<object class="MixerBusFader" id="{3eccba61-274e-470a-8a9d-34deb5ec1990}" />
+</objects>

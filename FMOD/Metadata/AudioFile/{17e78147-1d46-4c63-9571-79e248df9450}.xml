@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{17e78147-1d46-4c63-9571-79e248df9450}">
+		<property name="assetPath">
+			<value>Cabin/Emitter/EM_Fireplace.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>26.512291666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b68ee951-2152-4eaf-bd21-6b5c314b6c31}</destination>
+		</relationship>
+	</object>
+</objects>
