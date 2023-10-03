@@ -1,5 +1,8 @@
-# Table of Contents
+# Binora
 
+## Table of Contents
+
+* [Summary](#Summary)
 * [General Information](#GeneralInformation)
 * [Game Jam Details](#GameJamDetails)
 * [Tools](#Tools)
@@ -7,6 +10,12 @@
 * [Gameplay](#Gameplay)
 * [Naming Convention](#NamingConvention)
 * [Audio Format](#AudioFormat)
+
+## <a name="GeneralInformation">Summary</a>
+
+Binora is an audio puzzle game created in 10 days for the No Video Jam 2. The player has one minute to memorize the position and intensity of many ambient sounds. Those sounds will then fade out, and the player has to use their gamepad or keyboard to try to recreate the soundscape.
+
+**To play the game, visit [the official game page on Itch.io](https://matheusvilano.itch.io/binora). Further instructions on how to play can be found there.**
 
 ## <a name="GeneralInformation">General Information</a>
 
